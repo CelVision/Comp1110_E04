@@ -1,4 +1,4 @@
-FromBuilding,ToBuilding,TimeSpare(sec),TimePopular(sec),SpecialNotes,IsIndoors(Y/N)
+FromBuilding,ToBuilding,TimeSpare(sec),TimePopular(sec),SpecialNotes,IsIndoors(Y/N),IsUphill(Y/N),HavingElevator&Escalator(Y/N)
 Centennial Gate,The University of Hong Kong Visitor Centre,,,,
 Centennial Gate,Run Run Shaw Heritage House,,,,
 Centennial Gate,Yam Pak Building,,,,
@@ -28,7 +28,7 @@ Chong Yuet Ming Physics Building,K.K. Leung Building,,,,
 Chow Yei Ching Building,Cheng Yu Tung Tower,,,,
 Chow Yei Ching Building,The Jockey Club Tower,,,,
 Chow Yei Ching Building,Simon K.Y. Lee Hall,,,,
-Composite Building,Haking Wong Building,,,,
+Composite Building,Haking Wong Building,30,45,"Nil",Y,N,N
 Composite Building,Simon K.Y. Lee Hall,,,,
 Composite Building,The Jockey Club Tower,,,,
 Eliot Hall,May Hall,,,,
