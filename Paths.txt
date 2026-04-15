@@ -1,4 +1,4 @@
-FromBuilding,ToBuilding,TimeSpare(min),TimePopular(min),SpecialNotes,IsIndoors(Y/N)
+FromBuilding,ToBuilding,TimeSpare(sec),TimePopular(sec),SpecialNotes,IsIndoors(Y/N)
 Centennial Gate,The University of Hong Kong Visitor Centre,,,,
 Centennial Gate,Run Run Shaw Heritage House,,,,
 Centennial Gate,Yam Pak Building,,,,
