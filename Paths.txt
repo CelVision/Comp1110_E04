@@ -1,5 +1,5 @@
 FromBuilding,ToBuilding,TimeSpare(sec),TimePopular(sec),SpecialNotes,IsIndoors(Y/N),HasStairs&hills(Y/N),HasElevator&Escalator(Y/N)
-Centennial Gate,The University of Hong Kong Visitor Centre,,,,
+Centennial Gate,The University of Hong Kong Visitor Centre,60,90,N,N,Y
 Centennial Gate,Run Run Shaw Heritage House,,,,
 Centennial Gate,Yam Pak Building,,,,
 Central Podium Levels (CPD),Cheng Yu Tung Tower,,,,
