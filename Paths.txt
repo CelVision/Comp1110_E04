@@ -1,13 +1,13 @@
 FromBuilding,ToBuilding,TimeSpare(sec),TimePopular(sec),SpecialNotes,IsIndoors(Y/N),HasStairs&hills(Y/N),HasElevator&Escalator(Y/N)
-Centennial Gate,The University of Hong Kong Visitor Centre,60,90,N,N,Y
-Centennial Gate,Run Run Shaw Heritage House,60,90,N,N,Y
-Centennial Gate,Yam Pak Building,,,,
-Central Podium Levels (CPD),Cheng Yu Tung Tower,,,,
-Central Podium Levels (CPD),Run Run Shaw Tower,,,,
-Central Podium Levels (CPD),Chi Wah Learning Commons,,,,
-Central Podium Levels (CPD),Lee Shau Kee Lecture Centre,,,,
-Cheng Yu Tung Tower,Central Podium Levels (CPD),,,,
-Cheng Yu Tung Tower,Run Run Shaw Tower,,,,
+Centennial Gate,The University of Hong Kong Visitor Centre,60,90,"Lots of tourists",N,N,Y
+Centennial Gate,Run Run Shaw Heritage House,60,90,"Nil",N,N,Y
+Centennial Gate,Yam Pak Building,120,180,"Walk along Centennial Campus path",N,N,Y
+Central Podium Levels (CPD),Cheng Yu Tung Tower,45,60,"Indoor corridor access",Y,N,Y
+Central Podium Levels (CPD),Run Run Shaw Tower,"Nil",Y,N,Y
+Central Podium Levels (CPD),Chi Wah Learning Commons,"Same building complex",Y,N,Y
+Central Podium Levels (CPD),Lee Shau Kee Lecture Centre,50,70,"Covered walkway available",Y,N,Y
+Cheng Yu Tung Tower,Central Podium Levels (CPD),45,60,"Indoor corridor access",Y,N,Y
+Cheng Yu Tung Tower,Run Run Shaw Tower,70,"Nil",Y,N,Y
 Cheng Yu Tung Tower,Chow Yei Ching Building,,,,
 Cheng Yu Tung Tower,The Jockey Club Tower,,,,
 Cheng Yu Tung Tower,Lui Che Woo Law Library,,,,
