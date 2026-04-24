@@ -47,6 +47,7 @@ This project provides a C++ framework for navigating the University of Hong Kong
 ```
 d:\Comp1110_E04\
 ├── navigation.cpp              # Main source file (2 classes, 16 methods)
+├── interface.cpp               # Interactive user interface with pathfinding
 ├── navigation.java             # Java reference implementation
 ├── Read_data.cpp               # Data file processing utility
 ├── Paths.txt                   # CSV with 200+ paths
@@ -589,20 +590,148 @@ int main() {
 
 ---
 
+## Interactive User Interface
+
+The project includes an interactive interface (`interface.cpp`) that provides a menu-driven way to access all navigation functions.
+
+### Features
+
+**1. Find Path Between Buildings**
+- Select starting building from sorted list
+- Select ending building from sorted list
+- Automatic pathfinding using BFS algorithm
+- Displays complete navigation route with segment-by-segment breakdown
+
+**2. View Route Details**
+The interface shows:
+- **Complete Route**: Ordered list of all buildings in path
+- **Time Summary**: Total spare time vs popular time
+- **Segment Breakdown**: For each step:
+  - Travel times (spare and popular hours)
+  - Environment type (Indoor/Outdoor with icons)
+  - Accessibility features (Elevator, Stairs, Ramp)
+  - Special notes (scenic route, obstacles, etc.)
+
+**3. List All Buildings**
+- View all 52 campus buildings
+- Numbered for easy reference
+
+### Compilation
+
+```bash
+g++ -std=c++11 -Wall -Wextra -o interface interface.cpp
+```
+
+### Execution
+
+```bash
+.\interface.exe
+```
+
+### Sample Output
+
+```
+╔════════════════════════════════════════════════════════════╗
+║                    NAVIGATION RESULTS                      ║
+╚════════════════════════════════════════════════════════════╝
+
+📍 COMPLETE ROUTE:
+───────────────────────────────────────────────────────────
+  1. Main Building
+     ↓
+  2. Central Hub
+     ↓
+  3. Cafeteria
+
+⏱️  TIME SUMMARY:
+───────────────────────────────────────────────────────────
+  Spare Time (less crowded):    5.0 minutes
+  Popular Time (crowded):       8.0 minutes
+
+📋 DETAILED ROUTE BREAKDOWN:
+
+  Segment 1:
+    From: Main Building
+    To:   Central Hub
+    Spare Time: 3.0 min | Popular Time: 5.0 min
+    Environment: 🏢 Indoor
+    Accessibility: Standard path
+
+  Segment 2:
+    From: Central Hub
+    To:   Cafeteria
+    Spare Time: 2.0 min | Popular Time: 3.0 min
+    Environment: 🏢 Indoor
+    Accessibility: Elevator/Escalator
+    📝 Notes: Indoor corridor
+```
+
+### How to Use
+
+1. **Launch the program**
+   ```bash
+   .\interface.exe
+   ```
+
+2. **Main Menu Options**
+   - Enter `1` to find a path between buildings
+   - Enter `2` to list all available buildings
+   - Enter `3` to exit
+
+3. **Finding a Path**
+   - Select your starting building (1-52)
+   - Select your destination building (1-52)
+   - View the calculated route with all details
+
+4. **Understanding the Output**
+   - 🏢 = Indoor path
+   - 🌳 = Outdoor path
+   - Times shown in minutes
+   - Accessibility features indicate wheelchair access
+
+### Interface Components
+
+**NavigationSystem Class**
+- Manages all buildings and paths
+- Implements BFS pathfinding algorithm
+- Calculates route times and segment details
+
+**RouteInfo Structure**
+- Stores complete route information
+- Contains individual segment details
+- Tracks spare and popular times
+
+**User Interaction**
+- Menu-driven navigation
+- Numbered building selection
+- Formatted visual output with symbols and tables
+
+---
+
 ## Compilation and Execution
 
 ### Requirements
 - C++11 or later compiler
 - Standard C++ library
 
-### Compilation
+### Compilation - Core Library
 ```bash
 g++ -std=c++11 -Wall -Wextra -o program your_program.cpp
 ```
 
-### Execution
+### Compilation - Interactive Interface
+```bash
+g++ -std=c++11 -Wall -Wextra -o interface interface.cpp
+```
+
+### Execution - Core Program
 ```bash
 ./program
+```
+
+### Execution - Interactive Interface
+```bash
+.\interface.exe
 ```
 
 ### Running Tests
