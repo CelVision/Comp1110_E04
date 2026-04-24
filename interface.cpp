@@ -145,11 +145,6 @@ public:
      * Calculate route with times
      */
     struct RouteInfo {
-        std::vector<std::string> route;
-        float totalTimeSpare;
-        float totalTimePopular;
-        std::vector<PathSegment> segments;
-        
         struct PathSegment {
             std::string from;
             std::string to;
@@ -160,6 +155,11 @@ public:
             bool elevator;
             bool stairs;
         };
+        
+        std::vector<std::string> route;
+        float totalTimeSpare;
+        float totalTimePopular;
+        std::vector<PathSegment> segments;
     };
     
     RouteInfo calculateRoute(const std::string& start, const std::string& end) {
@@ -365,7 +365,7 @@ int main() {
         
         // Load test data
         std::cout << "Loading campus data...\n";
-        loadTestData(&system);
+        loadTestData(system);
         std::cout << "✓ Campus data loaded successfully!\n";
         
         bool running = true;
