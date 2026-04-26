@@ -1,7 +1,7 @@
 FromBuilding,ToBuilding,TimeSpare(sec),TimePopular(sec),SpecialNotes,IsIndoors(Y/N),HasStairs&hills(Y/N),HasElevator&Escalator(Y/N)
-Centennial Gate,The University of Hong Kong Visitor Centre,42,61,Nil,N,N,N
+Centennial Gate,The University of Hong Kong Visitor Centre,42,61,Many visitors in Holidays,N,N,N
 Centennial Gate,Run Run Shaw Heritage House,43,67,Nil,N,Y,N
-Centennial Gate,Yam Pak Building,120,180,Nil,N,Y,N
+Centennial Gate,Yam Pak Building,180,300,Walk along Centennail campus path,N,Y,N
 Central Podium Levels (CPD),Cheng Yu Tung Tower,36,46,Connected via podium levels,Y,N,Y
 Central Podium Levels (CPD),Run Run Shaw Tower,24,39,Connected via podium levels,Y,N,Y
 Central Podium Levels (CPD),Chi Wah Learning Commons,44,72,Connected via podium levels,Y,N,Y
@@ -12,8 +12,8 @@ Cheng Yu Tung Tower,Chow Yei Ching Building,113,155,Connected via walkways,Y,N,Y
 Cheng Yu Tung Tower,The Jockey Club Tower,150,210,Connected via walkways,Y,N,Y
 Cheng Yu Tung Tower,Lui Che Woo Law Library,56,97,Inside Cheng Yu Tung Tower,Y,Y,Y
 Chi Wah Learning Commons,Central Podium Levels (CPD),46,72,Connected via podium levels,Y,N,Y
-Chi Wah Learning Commons,Run Run Shaw Tower,57,89,Connected via podium levels,Y,N,Y
-Chi Wah Learning Commons,Lee Shau Kee Lecture Centre,100,151,Connected via podium levels,Y,Y,Y
+Chi Wah Learning Commons,Run Run Shaw Tower,57,89,In the sam building complex,Y,N,Y
+Chi Wah Learning Commons,Lee Shau Kee Lecture Centre,100,151,In the sam building complex,Y,Y,Y
 Chi Wah Learning Commons,Run Run Shaw Heritage House,126,185,Nil,N,Y,N
 Chong Yuet Ming Amenities Centre,Eliot Hall,122,170,Nil,Y,N,Y
 Chong Yuet Ming Amenities Centre,Chong Yuet Ming Physics Building,91,128,Connected via high-level walkways,Y,N,Y
@@ -65,8 +65,8 @@ Kadoorie Biological Sciences Building,Pao Siu Loong Building,103,146,Nil,N,Y,N
 Knowles Building,Fung Ping Shan Building,118,175,Nil,N,Y,N
 Knowles Building,Lily Pond,49,91,Connected via walkways,N,Y,N
 Lee Shau Kee Lecture Centre,Central Podium Levels (CPD),93,121,B1 Level,Y,Y,Y
-Lee Shau Kee Lecture Centre,Chi Wah Learning Commons,101,147,Connected via podium levels,Y,Y,Y
-Lee Shau Kee Lecture Centre,Run Run Shaw Tower,110,155,Connected via podium levels,Y,Y,Y
+Lee Shau Kee Lecture Centre,Chi Wah Learning Commons,101,147,In the sam building complex,Y,Y,Y
+Lee Shau Kee Lecture Centre,Run Run Shaw Tower,110,155,In the sam building complex,Y,Y,Y
 Lee Shau Kee Lecture Centre,Run Run Shaw Heritage House,138,195,Nil,N,Y,N
 Library Building (New Wing),Library Building (Old Wing),118,175,Via Hui Oi Chow Science Building or Sun Yat-sen Steps,N,Y,Y
 Library Building (New Wing),Main Building,77,117,Nil,N,N,N
@@ -103,8 +103,8 @@ Run Run Shaw Heritage House,Lee Shau Kee Lecture Centre,138,195,Nil,N,Y,N
 Run Run Shaw Heritage House,The University of Hong Kong Visitor Centre,60,90,Nil,N,Y,N
 Run Run Shaw Tower,Central Podium Levels (CPD),24,41,Connected via podium levels,Y,N,Y
 Run Run Shaw Tower,Cheng Yu Tung Tower,70,112,Connected via walkways,Y,N,Y
-Run Run Shaw Tower,Chi Wah Learning Commons,49,96,Connected via podium levels,Y,N,Y
-Run Run Shaw Tower,Lee Shau Kee Lecture Centre,108,155,Connected via podium levels,Y,Y,Y
+Run Run Shaw Tower,Chi Wah Learning Commons,49,96,In the sam building complex,Y,N,Y
+Run Run Shaw Tower,Lee Shau Kee Lecture Centre,108,155,In the sam building complex,Y,Y,Y
 Runme Shaw Building,Meng Wah Complex,103,153,Nil,Y,N,Y
 Runme Shaw Building,Rayson Huang Theatre,51,91,Nil,N,N,N
 Runme Shaw Building,Run Run Shaw Building,66,104,Nil,N,N,N
@@ -134,6 +134,6 @@ University Lodge,Robert Black College,100,149,Nil,N,Y,N
 University Lodge,Graduate House,145,210,Nil,N,Y,N
 Wong Chuang Lai Wah Building,Wong Chue Meng Building,43,72,Nil,N,N,N
 Wong Chue Meng Building,Wong Chuang Lai Wah Building,44,72,Nil,N,N,N
-Yam Pak Building,Centennial Gate,120,180,Nil,N,Y,N
+Yam Pak Building,Centennial Gate,180,300,Walk along Centennail campus path,N,Y,N
 Yam Pak Building,The University of Hong Kong Visitor Centre,148,215,Nil,N,Y,N
 Yu Chun Keung Tam Shuk Yin Learning Centre,The Jockey Club Tower,23,40,Connected via walkways,Y,N,Y
