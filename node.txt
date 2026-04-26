@@ -13,6 +13,7 @@ Fong Shu Chuen Amenities Centre
 Fung Ping Shan Building
 Global Lounge
 Graduate House
+HKU Station A2 Access
 Haking Wong Building
 Hui Oi Chow Science Building
 Hung Hing Ying Building
@@ -37,7 +38,7 @@ Run Run Shaw Heritage House
 Run Run Shaw Tower
 Runme Shaw Building
 Simon K.Y. Lee Hall
-Sun Yat-sen Place 
+Sun Yat-sen Place
 Sun Yat-sen Steps
 Swire Hall
 T.T. Tsui Building
@@ -51,4 +52,3 @@ Wong Chuang Lai Wah Building
 Wong Chue Meng Building
 Yam Pak Building
 Yu Chun Keung Tam Shuk Yin Learning Centre
-Yu Chun Keung Tam Shuk Yin Lecture Theatre
