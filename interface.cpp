@@ -8,6 +8,7 @@
 #include <iomanip>
 #include <algorithm>
 #include <fstream>
+#include <limits>
 #include "navigation.cpp"
 
 /**
@@ -405,10 +406,13 @@ int displayMainMenu() {
     
     int choice;
     if (!(std::cin >> choice)) {
-        std::cerr << "Input error!" << std::endl;
+        // Clear error state and flush input buffer
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cerr << "Input error! Please enter a number." << std::endl;
         return -1;
     }
-    std::cin.ignore();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::cout << "Got choice: " << choice << std::endl;
     return choice;
 }
@@ -429,11 +433,17 @@ int selectBuilding(const std::vector<std::string>& buildings, const std::string&
     std::cout.flush();
     
     int choice;
-    std::cin >> choice;
-    std::cin.ignore();
+    if (!(std::cin >> choice)) {
+        // Input failed - clear error state and skip to next line
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Invalid input! Please enter a number.\n";
+        return -1;
+    }
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     
     if (choice < 1 || choice > (int)buildings.size()) {
-        std::cout << "Invalid selection!\n";
+        std::cout << "Invalid selection! Please enter a number between 1 and " << buildings.size() << ".\n";
         return -1;
     }
     
@@ -566,16 +576,27 @@ int main() {
     while (running) {
         int choice = displayMainMenu();
         
+        // Skip invalid input and retry
+        if (choice == -1) {
+            continue;
+        }
+        
         switch (choice) {
             case 1: {
                 // Find path
                 std::vector<std::string> buildings = system.getAllBuildingNames();
                 
                 int startIdx = selectBuilding(buildings, "SELECT STARTING BUILDING:");
-                if (startIdx == -1) break;
+                if (startIdx == -1) {
+                    std::cout << "Please try again.\n";
+                    break;
+                }
                 
                 int endIdx = selectBuilding(buildings, "SELECT ENDING BUILDING:");
-                if (endIdx == -1) break;
+                if (endIdx == -1) {
+                    std::cout << "Please try again.\n";
+                    break;
+                }
                 
                 std::string startBuilding = buildings[startIdx];
                 std::string endBuilding = buildings[endIdx];
