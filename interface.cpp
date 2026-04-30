@@ -84,50 +84,77 @@ public:
     }
     
     /**
-     * Find a path between two buildings using BFS
+     * Find the SHORTEST TIME path between two buildings using Dijkstra
+     * (CORRECT for weighted graph - uses timeSpare as weight)
      */
     std::vector<std::string> findPath(const std::string& start, const std::string& end) {
-        if (buildings.find(start) == buildings.end() || 
+        if (buildings.find(start) == buildings.end() ||
             buildings.find(end) == buildings.end()) {
             return {};
         }
-        
+    
+        // 初始化：距离无穷大，父节点为空
+        std::map<std::string, float> dist;
         std::map<std::string, std::string> parent;
         std::map<std::string, bool> visited;
-        std::queue<std::string> q;
-        
-        q.push(start);
-        visited[start] = true;
-        
-        while (!q.empty()) {
-            std::string current = q.front();
-            q.pop();
-            
-            if (current == end) {
-                // Reconstruct path
-                std::vector<std::string> path;
-                std::string node = end;
-                while (node != start) {
-                    path.push_back(node);
-                    node = parent[node];
-                }
-                path.push_back(start);
-                std::reverse(path.begin(), path.end());
-                return path;
-            }
-            
-            Building* building = buildings[current];
-            for (Building* neighbor : building->getNeighbors()) {
-                std::string neighborName = neighbor->getName();
-                if (!visited[neighborName]) {
-                    visited[neighborName] = true;
-                    parent[neighborName] = current;
-                    q.push(neighborName);
+    
+        for (auto& pair : buildings) {
+            std::string name = pair.first;
+            dist[name] = 1e9; // 无穷大
+            parent[name] = "";
+            visited[name] = false;
+        }
+        dist[start] = 0.0f;
+    
+        // 优先队列：(总时间, 楼名) → 每次取时间最小的
+        using P = std::pair<float, std::string>;
+        std::priority_queue<P, std::vector<P>, std::greater<P>> pq;
+        pq.push({0.0f, start});
+    
+        while (!pq.empty()) {
+            auto [currentDist, current] = pq.top();
+            pq.pop();
+    
+            if (visited[current]) continue;
+            visited[current] = true;
+    
+            if (current == end) break; // 找到终点就退出
+    
+            // 遍历邻居
+            Building* b = buildings[current];
+            for (Building* neighbor : b->getNeighbors()) {
+                std::string next = neighbor->getName();
+    
+                // 拿到路径时间（权重）
+                Path* p = findPathInfo(current, next);
+                if (!p) continue;
+    
+                float weight = p->getTimeSpare(); // 用空闲时间算最短路
+    
+                // 松弛操作：能不能更短？
+                if (dist[next] > dist[current] + weight) {
+                    dist[next] = dist[current] + weight;
+                    parent[next] = current;
+                    pq.push({dist[next], next});
                 }
             }
         }
-        
-        return {};  // No path found
+    
+        // 无路径
+        if (parent[end].empty()) {
+            return {};
+        }
+    
+        // 还原路径
+        std::vector<std::string> path;
+        std::string node = end;
+        while (!node.empty()) {
+            path.push_back(node);
+            node = parent[node];
+        }
+        std::reverse(path.begin(), path.end());
+    
+        return path;
     }
     
     /**
