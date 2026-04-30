@@ -38,7 +38,7 @@ This project provides a C++ framework for navigating the University of Hong Kong
 ✓ Exception-based error handling  
 ✓ Memory-safe design (prevents copying/moving)  
 ✓ Efficient API (returns by reference)  
-✓ BFS pathfinding algorithm for route calculation  
+✓ Dijkstra's algorithm for shortest time path calculation
 ✓ Comprehensive documentation  
 ✓ Full test coverage (15 tests, 100% passing)
 
