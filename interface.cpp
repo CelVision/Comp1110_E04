@@ -112,7 +112,8 @@ public:
         pq.push({0.0f, start});
     
         while (!pq.empty()) {
-            auto [currentDist, current] = pq.top();
+            P top = pq.top();
+            std::string current = top.second;
             pq.pop();
     
             if (visited[current]) continue;
