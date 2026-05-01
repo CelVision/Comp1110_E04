@@ -16,16 +16,18 @@ Chi Wah Learning Commons,Run Run Shaw Tower,57,89,In the sam building complex,Y,
 Chi Wah Learning Commons,Lee Shau Kee Lecture Centre,100,151,In the sam building complex,Y,Y,Y
 Chi Wah Learning Commons,Run Run Shaw Heritage House,126,185,Nil,N,Y,N
 Chong Yuet Ming Amenities Centre,Eliot Hall,122,170,Nil,Y,N,Y
+Chong Yuet Ming Amenities Centre,K.K. Leung Building,124,176,Nil,Y,N,Y
 Chong Yuet Ming Amenities Centre,Chong Yuet Ming Physics Building,91,128,Connected via high-level walkways,Y,N,Y
-Chong Yuet Ming Amenities Centre,K.K. Leung Building,185,251,Nil,Y,N,Y
 Chong Yuet Ming Amenities Centre,Chong Yuet Ming Fountain,114,155,Nil,Y,N,Y
+Chong Yuet Ming Amenities Centre,Runme Shaw Building,69,111,Nil,Y,Y,Y
+Chong Yuet Ming Amenities Centre,Wong Chuang Lai Wah Building,44,66,Nil,N,N,N
 Chong Yuet Ming Chemistry Building,Chong Yuet Ming Physics Building,49,91,Connected via high-level walkways,Y,N,Y
 Chong Yuet Ming Fountain,Meng Wah Complex,103,152,Nil,Y,N,Y
 Chong Yuet Ming Fountain,Eliot Hall,128,185,Nil,Y,N,Y
 Chong Yuet Ming Fountain,Chong Yuet Ming Amenities Centre,116,155,Nil,Y,N,Y
 Chong Yuet Ming Physics Building,Chong Yuet Ming Chemistry Building,51,93,Connected via high-level walkways,Y,N,Y
 Chong Yuet Ming Physics Building,Chong Yuet Ming Amenities Centre,93,128,Connected via high-level walkways,Y,N,Y
-Chong Yuet Ming Physics Building,K.K. Leung Building,118,175,Nil,Y,N,Y
+Chong Yuet Ming Physics Building,K.K. Leung Building,248,300,Nil,Y,N,Y
 Chow Yei Ching Building,Cheng Yu Tung Tower,117,155,Connected via walkways,Y,N,Y
 Chow Yei Ching Building,The Jockey Club Tower,29,49,Connected via walkways,Y,N,Y
 Chow Yei Ching Building,Simon K.Y. Lee Hall,63,104,Nil,N,N,N
@@ -36,42 +38,50 @@ Eliot Hall,May Hall,74,123,Nil,N,Y,N
 Eliot Hall,Chong Yuet Ming Fountain,128,185,Nil,Y,N,Y
 Eliot Hall,Chong Yuet Ming Amenities Centre,124,170,Nil,Y,N,Y
 Eliot Hall,Meng Wah Complex,109,155,Nil,Y,N,Y
-Fong Shu Chuen Amenities Centre,Swire Hall,53,94,Nil,N,N,N
+Fong Shu Chuen Amenities Centre,Swire Hall,53,94,Nil,Y,N,Y
 Fong Shu Chuen Amenities Centre,Global Lounge,64,106,Nil,N,N,N
-Fong Shu Chuen Amenities Centre,T.T. Tsui Building,76,116,Nil,N,N,N
 Fung Ping Shan Building,T.T. Tsui Building,96,128,Nil,N,Y,N
 Fung Ping Shan Building,Knowles Building,118,175,Nil,N,Y,N
 Global Lounge,Fong Shu Chuen Amenities Centre,66,107,Nil,N,N,N
-Global Lounge,Swire Hall,39,72,Nil,N,N,N
+Global Lounge,Swire Hall,39,72,Nil,Y,N,Y
 Graduate House,The Jockey Club Building,54,86,Nil,N,N,N
 Graduate House,Robert Black College,97,128,Nil,N,Y,N
 Graduate House,University Lodge,153,210,Outside map area,N,Y,N
 Haking Wong Building,Composite Building,60,90,Nil,N,Y,N
-Haking Wong Building,Kadoorie Biological Sciences Building,31,51,Nil,N,N,N
+Haking Wong Building,Kadoorie Biological Sciences Building,163,243,Nil,N,N,N
 Haking Wong Building,HKU Station A2 Access,21,42,Direct connection,Y,N,Y
+Haking Wong Building,Hui Oi Chow Science Building,158,243,Direct connection,Y,N,N
 HKU Station A2 Access,Haking Wong Building,23,42,Direct connection,Y,N,Y
+Hui Oi Chow Science Building,Library Building (Old Wing),16,28,Nil,N,N,N
 Hui Oi Chow Science Building,James Hsioung Lee Science Building,41,72,Nil,N,N,N
-Hui Oi Chow Science Building,Run Run Shaw Building,56,87,Nil,N,N,N
+Hui Oi Chow Science Building,Haking Wong Building,158,243,Y,N,N
+Hui Oi Chow Science Building,Run Run Shaw Building,36,56,Nil,N,N,N
 Hui Oi Chow Science Building,Rayson Huang Theatre,67,99,Nil,N,N,N
+Hui Oi Chow Science Building,Sun Yat-sen Steps,32,53,Connected via walkways,N,Y,N
 Hung Hing Ying Building,Main Building,57,89,Nil,N,N,N
 Hung Hing Ying Building,Loke Yew Hall,43,72,Nil,N,N,N
 Hung Hing Ying Building,Pao Siu Loong Building,59,100,Nil,N,Y,N
 James Hsioung Lee Science Building,Hui Oi Chow Science Building,44,72,Nil,N,N,N
-K.K. Leung Building,Chong Yuet Ming Amenities Centre,148,215,Nil,Y,N,Y
-K.K. Leung Building,Chong Yuet Ming Physics Building,118,175,Nil,Y,N,Y
-K.K. Leung Building,Tang Chi Ngong Building,101,154,Nil,Y,N,Y
-Kadoorie Biological Sciences Building,Haking Wong Building,33,53,Nil,N,N,N
-Kadoorie Biological Sciences Building,Pao Siu Loong Building,103,146,Nil,N,Y,N
+K.K. Leung Building,Knowles Building,78,115,Nil,Y,N,Y
+K.K. Leung Building,Chong Yuet Ming Amenities Centre,124,176,Nil,Y,N,Y
+K.K. Leung Building,Chong Yuet Ming Physics Building,248,300,Nil,Y,N,Y
+Kadoorie Biological Sciences Building,Haking Wong Building,163,243,Nil,N,N,N
+Kadoorie Biological Sciences Building,Library Building (New Wing),163,226,Nil,N,Y,N
 Knowles Building,Fung Ping Shan Building,118,175,Nil,N,Y,N
+Knowles Building,K.K. Leung Building,78,115,Nil,Y,N,Y
 Knowles Building,Lily Pond,49,91,Connected via walkways,N,Y,N
+Knowles Building,Sun Yat-sen Place,36,51,Nil,N,N,N
 Lee Shau Kee Lecture Centre,Central Podium Levels (CPD),93,121,B1 Level,Y,Y,Y
 Lee Shau Kee Lecture Centre,Chi Wah Learning Commons,101,147,In the sam building complex,Y,Y,Y
 Lee Shau Kee Lecture Centre,Run Run Shaw Tower,110,155,In the sam building complex,Y,Y,Y
 Lee Shau Kee Lecture Centre,Run Run Shaw Heritage House,138,195,Nil,N,Y,N
-Library Building (New Wing),Library Building (Old Wing),118,175,Via Hui Oi Chow Science Building or Sun Yat-sen Steps,N,Y,Y
+Library Building (New Wing),Library Building (Old Wing),118,175,Have to take a detour,N,Y,Y
 Library Building (New Wing),Main Building,77,117,Nil,N,N,N
-Library Building (Old Wing),Library Building (New Wing),118,175,Via Hui Oi Chow Science Building or Sun Yat-sen Steps,N,Y,Y
-Library Building (Old Wing),Sun Yat-sen Place,51,94,Nil,N,N,N
+Library Building (New Wing),Sun Yat-sen Place,21,31,Nil,N,N,N
+Library Building (New Wing),Kadoorie Biological Sciences Building,163,226,Nil,N,Y,N
+Library Building (Old Wing),Library Building (New Wing),118,175,Have to take a detour,N,Y,Y
+Library Building (Old Wing),Sun Yat-sen Steps,34,55,Nil,N,Y,N
+Library Building (Old Wing),Hui Oi Chow Science Building,16,28,Nil,N,N,N
 Lily Pond,Knowles Building,69,119,Connected via walkways,N,Y,N
 Lily Pond,Sun Yat-sen Steps,46,72,Connected via walkways,N,Y,N
 Loke Yew Hall,Main Building,47,72,Nil,N,N,N
@@ -85,17 +95,18 @@ May Hall,Meng Wah Complex,91,128,Nil,Y,N,Y
 Meng Wah Complex,May Hall,93,128,Nil,Y,N,Y
 Meng Wah Complex,Eliot Hall,111,155,Nil,Y,N,Y
 Meng Wah Complex,Chong Yuet Ming Fountain,104,149,Nil,Y,N,Y
-Meng Wah Complex,Runme Shaw Building,106,150,Nil,Y,N,Y
+Meng Wah Complex,Runme Shaw Building,60,90,Nil,Y,N,Y
+Meng Wah Complex,Wong Chuang Lai Wah Building,24,36,Nil,N,N,N
+Meng Wah Complex,Wong Chue Meng Building,24,36,Nil,N,N
 Pao Siu Loong Building,Hung Hing Ying Building,61,107,Nil,N,Y,N
-Pao Siu Loong Building,Kadoorie Biological Sciences Building,99,151,Nil,N,Y,N
 Rayson Huang Theatre,Hui Oi Chow Science Building,63,100,Nil,N,N,N
-Rayson Huang Theatre,Run Run Shaw Building,43,72,Nil,N,N,N
-Rayson Huang Theatre,Runme Shaw Building,56,87,Nil,N,N,N
+Rayson Huang Theatre,Run Run Shaw Building,23,42,Nil,N,N,N
+Rayson Huang Theatre,Runme Shaw Building,15,23,Nil,N,N,N
 Robert Black College,Graduate House,94,128,Nil,N,Y,N
 Robert Black College,University Lodge,101,152,Outside map area,N,Y,N
 Robert Black College,University Drive No. 2,74,122,Nil,N,N,N
-Run Run Shaw Building,Hui Oi Chow Science Building,57,89,Nil,N,N,N
-Run Run Shaw Building,Rayson Huang Theatre,44,72,Nil,N,N,N
+Run Run Shaw Building,Hui Oi Chow Science Building,36,56,Nil,N,N,N
+Run Run Shaw Building,Rayson Huang Theatre,23,42,Nil,N,N,N
 Run Run Shaw Building,Runme Shaw Building,64,102,Nil,N,N,N
 Run Run Shaw Heritage House,Centennial Gate,46,73,Nil,N,Y,N
 Run Run Shaw Heritage House,Chi Wah Learning Commons,129,185,Nil,N,Y,N
@@ -105,22 +116,28 @@ Run Run Shaw Tower,Central Podium Levels (CPD),24,41,Connected via podium levels
 Run Run Shaw Tower,Cheng Yu Tung Tower,70,112,Connected via walkways,Y,N,Y
 Run Run Shaw Tower,Chi Wah Learning Commons,49,96,In the sam building complex,Y,N,Y
 Run Run Shaw Tower,Lee Shau Kee Lecture Centre,108,155,In the sam building complex,Y,Y,Y
-Runme Shaw Building,Meng Wah Complex,103,153,Nil,Y,N,Y
-Runme Shaw Building,Rayson Huang Theatre,51,91,Nil,N,N,N
+Runme Shaw Building,Chong Yuet Ming Amenities Centre,69,111,Nil,Y,Y,Y
+Runme Shaw Building,Meng Wah Complex,60,90,Nil,Y,N,Y
+Run Run Shaw Building,Sun Yat-sen Steps,33,54,Nil,N,Y,N
+Runme Shaw Building,Rayson Huang Theatre,15,23,Nil,N,N,N
 Runme Shaw Building,Run Run Shaw Building,66,104,Nil,N,N,N
 Simon K.Y. Lee Hall,Composite Building,47,72,Nil,N,N,N
 Simon K.Y. Lee Hall,Chow Yei Ching Building,67,106,Nil,N,N,N
-Sun Yat-sen Place,Library Building (Old Wing),53,93,Nil,N,N,N
+Sun Yat-sen Place,Library Building (New Wing),21,31,Nil,N,N,N
+Sun Yat-sen Place,Knowles Building,36,51,Nil,N,N,N
 Sun Yat-sen Place,Sun Yat-sen Steps,34,54,Nil,N,Y,N
+Sun Yat-sen Steps,Library Building (Old Wing),34,55,Nil,N,Y,N
 Sun Yat-sen Steps,Lily Pond,39,72,Connected via walkways,N,Y,N
-Sun Yat-sen Steps,Sun Yat-sen Place,36,56,Nil,N,Y,N
-Swire Hall,Fong Shu Chuen Amenities Centre,57,94,Nil,N,N,N
-Swire Hall,Global Lounge,41,72,Nil,N,N,N
-T.T. Tsui Building,Fong Shu Chuen Amenities Centre,76,123,N,N,N
+Sun Yat-sen Steps,Hui Oi Chow Science Building,32,53,Connected via walkways,N,Y,N
+Sun Yat-sen Steps,Sun Yat-sen Place,36,56,stairs,N,Y,N
+Sun Yat-sen Steps,Run Run Shaw Building,33,54,Nil,N,Y,N
+Swire Hall,Fong Shu Chuen Amenities Centre,57,94,Nil,Y,N,Y
+Swire Hall,Global Lounge,41,72,Nil,Y,N,Y
+Swire Hall,Tang Chi Ngong Building,57,84,Nil,Y,N,Y
+Swire Hall,T.T. Tsui Building,46,73,N,N,N
+T.T. Tsui Building,Swire Hall,46,73,N,N,N
 T.T. Tsui Building,Fung Ping Shan Building,97,128,Nil,N,Y,N
-T.T. Tsui Building,Tang Chi Ngong Building,108,155,Nil,Y,N,Y
-Tang Chi Ngong Building,K.K. Leung Building,107,154,Nil,Y,N,Y
-Tang Chi Ngong Building,T.T. Tsui Building,108,155,Nil,Y,N,Y
+Tang Chi Ngong Building,Swire Hall,57,84,Nil,Y,N,Y
 The Jockey Club Building,Graduate House,49,86,Nil,N,N,N
 The Jockey Club Tower,Cheng Yu Tung Tower,146,210,Connected via walkways,Y,N,Y
 The Jockey Club Tower,Chow Yei Ching Building,37,54,Connected via walkways,Y,N,Y
@@ -132,8 +149,9 @@ The University of Hong Kong Visitor Centre,Yam Pak Building,148,215,Nil,N,Y,N
 University Drive No. 2,Robert Black College,77,Nil,115,N,N,N
 University Lodge,Robert Black College,100,149,Nil,N,Y,N
 University Lodge,Graduate House,145,210,Nil,N,Y,N
-Wong Chuang Lai Wah Building,Wong Chue Meng Building,43,72,Nil,N,N,N
-Wong Chue Meng Building,Wong Chuang Lai Wah Building,44,72,Nil,N,N,N
+Wong Chuang Lai Wah Building,Meng Wah Complex,24,36,Nil,N,N,N
+Wong Chuang Lai Wah Building,Chong Yuet Ming Amenities Centre,44,66,Nil,N,N,N
+Wong Chue Meng Building,Meng Wah Complex,24,36,Nil,N,N,N
 Yam Pak Building,Centennial Gate,180,300,Walk along Centennail campus path,N,Y,N
 Yam Pak Building,The University of Hong Kong Visitor Centre,148,215,Nil,N,Y,N
 Yu Chun Keung Tam Shuk Yin Learning Centre,The Jockey Club Tower,23,40,Connected via walkways,Y,N,Y
