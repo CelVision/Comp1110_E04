@@ -400,7 +400,7 @@ std::vector<PathData> readPathsFromFile(const std::string& filename) {
 void loadRealData(NavigationSystem& system) {
     // Read buildings
     std::cout << "Reading buildings from node.txt...\n" << std::flush;
-    std::vector<std::string> buildings = readBuildingsFromFile("node.txt");
+    std::vector<std::string> buildings = readBuildingsFromFile("../data/node.txt");
     std::cout << "  Loaded " << buildings.size() << " buildings\n" << std::flush;
     
     for (const auto& building : buildings) {
@@ -409,7 +409,7 @@ void loadRealData(NavigationSystem& system) {
     
     // Read neighbors and connect buildings
     std::cout << "Reading connections from neighbor.txt...\n" << std::flush;
-    std::map<std::string, std::vector<std::string>> neighbors = readNeighborsFromFile("neighbor.txt");
+    std::map<std::string, std::vector<std::string>> neighbors = readNeighborsFromFile("../data/neighbor.txt");
     std::cout << "  Loaded " << neighbors.size() << " building connections\n" << std::flush;
     
     for (const auto& pair : neighbors) {
@@ -421,7 +421,7 @@ void loadRealData(NavigationSystem& system) {
     
     // Read paths
     std::cout << "Reading paths from Paths.txt...\n" << std::flush;
-    std::vector<PathData> paths = readPathsFromFile("Paths.txt");
+    std::vector<PathData> paths = readPathsFromFile("../data/Paths.txt");
     std::cout << "  Loaded " << paths.size() << " paths\n" << std::flush;
     
     for (const auto& path : paths) {

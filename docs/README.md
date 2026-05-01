@@ -48,7 +48,7 @@ This project provides a C++ framework for navigating the University of Hong Kong
 ## Project Structure
 
 ```
-Comp1110_E04\
+d:\Comp1110_E04\
 ├── navigation.cpp              # Main source file (2 classes, 16 methods)
 ├── interface.cpp               # Interactive user interface with file-based data loading
 ├── navigation.java             # Java reference implementation
