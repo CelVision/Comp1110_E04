@@ -34,8 +34,8 @@ Pao Siu Loong Building : Hung Hing Ying Building
 Rayson Huang Theatre : Hui Oi Chow Science Building, Run Run Shaw Building, Runme Shaw Building
 Robert Black College : Graduate House, University Drive No. 2, University Lodge
 Run Run Shaw Building : Hui Oi Chow Science Building, Rayson Huang Theatre, Runme Shaw Building, Sun Yat-sen Steps
-Run Run Shaw Heritage House : Centennial Gate, Chi Wah Learning Commons, Lee Shau Kee Lecture Centre, The University of Hong Kong Visitor Centre
-Run Run Shaw Tower : Central Podium Levels (CPD), Cheng Yu Tung Tower, Chi Wah Learning Commons, Lee Shau Kee Lecture Centre
+Run Run Shaw Heritage House : Centennial Gate, Chi Wah Learning Commons, Lee Shau Kee Lecture Centre, Run Run Shaw Tower, The University of Hong Kong Visitor Centre
+Run Run Shaw Tower : Central Podium Levels (CPD), Cheng Yu Tung Tower, Chi Wah Learning Commons, Lee Shau Kee Lecture Centre, Run Run Shaw Heritage House, The University of Hong Kong Visitor Centre
 Runme Shaw Building : Chong Yuet Ming Amenities Centre, Meng Wah Complex, Rayson Huang Theatre, Run Run Shaw Building
 Simon K.Y. Lee Hall : Chow Yei Ching Building, Composite Building
 Sun Yat-sen Place : Knowles Building, Library Building (New Wing), Sun Yat-sen Steps
@@ -45,7 +45,7 @@ T.T. Tsui Building : Fung Ping Shan Building, Swire Hall
 Tang Chi Ngong Building : Swire Hall
 The Jockey Club Building : Graduate House
 The Jockey Club Tower : Central Podium Levels (CPD), Cheng Yu Tung Tower, Chow Yei Ching Building, Composite Building, Yu Chun Keung Tam Shuk Yin Learning Centre
-The University of Hong Kong Visitor Centre : Centennial Gate, Run Run Shaw Heritage House, Yam Pak Building
+The University of Hong Kong Visitor Centre : Centennial Gate, Run Run Shaw Heritage House, Run Run Shaw Tower, Yam Pak Building
 University Drive No. 2 : Robert Black College
 University Lodge : Graduate House, Robert Black College
 Wong Chuang Lai Wah Building : Chong Yuet Ming Amenities Centre, Meng Wah Complex
