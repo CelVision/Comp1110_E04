@@ -5,10 +5,11 @@ Centennial Gate,Yam Pak Building,180,300,Walk along Centennail campus path,N,Y,N
 Central Podium Levels (CPD),Cheng Yu Tung Tower,36,46,Connected via podium levels,Y,N,Y
 Central Podium Levels (CPD),Run Run Shaw Tower,24,39,Connected via podium levels,Y,N,Y
 Central Podium Levels (CPD),Chi Wah Learning Commons,44,72,Connected via podium levels,Y,N,Y
+Central Podium Levels (CPD),The Jockey Club Tower,50,83,Connected via walkways,Y,N,Y
 Central Podium Levels (CPD),Lee Shau Kee Lecture Centre,89,134,B1 Level,Y,Y,Y
 Cheng Yu Tung Tower,Central Podium Levels (CPD),37,47,Connected via podium levels,Y,N,Y
 Cheng Yu Tung Tower,Run Run Shaw Tower,70,111,Connected via walkways,Y,N,Y
-Cheng Yu Tung Tower,Chow Yei Ching Building,113,155,Connected via walkways,Y,N,Y
+Cheng Yu Tung Tower,Chow Yei Ching Building,183,242,Connected via walkways,Y,N,Y
 Cheng Yu Tung Tower,The Jockey Club Tower,150,210,Connected via walkways,Y,N,Y
 Cheng Yu Tung Tower,Lui Che Woo Law Library,56,97,Inside Cheng Yu Tung Tower,Y,Y,Y
 Chi Wah Learning Commons,Central Podium Levels (CPD),46,72,Connected via podium levels,Y,N,Y
@@ -28,7 +29,7 @@ Chong Yuet Ming Fountain,Chong Yuet Ming Amenities Centre,116,155,Nil,Y,N,Y
 Chong Yuet Ming Physics Building,Chong Yuet Ming Chemistry Building,51,93,Connected via high-level walkways,Y,N,Y
 Chong Yuet Ming Physics Building,Chong Yuet Ming Amenities Centre,93,128,Connected via high-level walkways,Y,N,Y
 Chong Yuet Ming Physics Building,K.K. Leung Building,248,300,Nil,Y,N,Y
-Chow Yei Ching Building,Cheng Yu Tung Tower,117,155,Connected via walkways,Y,N,Y
+Chow Yei Ching Building,Cheng Yu Tung Tower,183,242,Connected via walkways,Y,N,Y
 Chow Yei Ching Building,The Jockey Club Tower,29,49,Connected via walkways,Y,N,Y
 Chow Yei Ching Building,Simon K.Y. Lee Hall,63,104,Nil,N,N,N
 Composite Building,Haking Wong Building,60,90,Nil,N,Y,N
@@ -54,7 +55,7 @@ Haking Wong Building,Hui Oi Chow Science Building,158,243,Direct connection,Y,N,
 HKU Station A2 Access,Haking Wong Building,23,42,Direct connection,Y,N,Y
 Hui Oi Chow Science Building,Library Building (Old Wing),16,28,Nil,N,N,N
 Hui Oi Chow Science Building,James Hsioung Lee Science Building,41,72,Nil,N,N,N
-Hui Oi Chow Science Building,Haking Wong Building,158,243,Y,N,N
+Hui Oi Chow Science Building,Haking Wong Building,104,158,Y,N,N
 Hui Oi Chow Science Building,Run Run Shaw Building,36,56,Nil,N,N,N
 Hui Oi Chow Science Building,Rayson Huang Theatre,67,99,Nil,N,N,N
 Hui Oi Chow Science Building,Sun Yat-sen Steps,32,53,Connected via walkways,N,Y,N
@@ -142,6 +143,7 @@ The Jockey Club Building,Graduate House,49,86,Nil,N,N,N
 The Jockey Club Tower,Cheng Yu Tung Tower,146,210,Connected via walkways,Y,N,Y
 The Jockey Club Tower,Chow Yei Ching Building,37,54,Connected via walkways,Y,N,Y
 The Jockey Club Tower,Composite Building,89,128,Connected via walkways,Y,N,Y
+The Jockey Club Tower,Central Podium Levels (CPD),50,83,Connected via walkways,Y,N,Y
 The Jockey Club Tower,Yu Chun Keung Tam Shuk Yin Learning Centre,21,40,Connected via walkways,Y,N,Y
 The University of Hong Kong Visitor Centre,Centennial Gate,42,59,Nil,N,N,N
 The University of Hong Kong Visitor Centre,Run Run Shaw Heritage House,99,147,Nil,N,Y,N
