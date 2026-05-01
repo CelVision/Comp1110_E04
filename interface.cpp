@@ -93,20 +93,20 @@ public:
             return {};
         }
     
-        // 初始化：距离无穷大，父节点为空
+        // initialize Dijkstra's algorithm
         std::map<std::string, float> dist;
         std::map<std::string, std::string> parent;
         std::map<std::string, bool> visited;
     
         for (auto& pair : buildings) {
             std::string name = pair.first;
-            dist[name] = 1e9; // 无穷大
+            dist[name] = 1e9; 
             parent[name] = "";
             visited[name] = false;
         }
         dist[start] = 0.0f;
     
-        // 优先队列：(总时间, 楼名) → 每次取时间最小的
+
         using P = std::pair<float, std::string>;
         std::priority_queue<P, std::vector<P>, std::greater<P>> pq;
         pq.push({0.0f, start});
@@ -119,20 +119,20 @@ public:
             if (visited[current]) continue;
             visited[current] = true;
     
-            if (current == end) break; // 找到终点就退出
+            if (current == end) break; // exit if we reached the destination
     
-            // 遍历邻居
+            // go through neighbors
             Building* b = buildings[current];
             for (Building* neighbor : b->getNeighbors()) {
                 std::string next = neighbor->getName();
     
-                // 拿到路径时间（权重）
+                // get the weight
                 Path* p = findPathInfo(current, next);
                 if (!p) continue;
     
-                float weight = p->getTimeSpare(); // 用空闲时间算最短路
+                float weight = p->getTimeSpare(); 
     
-                // 松弛操作：能不能更短？
+
                 if (dist[next] > dist[current] + weight) {
                     dist[next] = dist[current] + weight;
                     parent[next] = current;
@@ -141,12 +141,12 @@ public:
             }
         }
     
-        // 无路径
+        // no path found
         if (parent[end].empty()) {
             return {};
         }
     
-        // 还原路径
+        // get path
         std::vector<std::string> path;
         std::string node = end;
         while (!node.empty()) {
@@ -649,6 +649,11 @@ int main() {
                         std::cout << std::setw(2) << (i + 1) << ". " << buildings[i] << "\n";
                     }
                     std::cout << "=========================================\n";
+                break;
+            }
+            
+            case 3: {
+                // Exit
                 std::cout << "\nThank you for using HKU Campus Navigation System!\n";
                 running = false;
                 break;
