@@ -1,5 +1,5 @@
 Centennial Gate : Run Run Shaw Heritage House, The University of Hong Kong Visitor Centre, Yam Pak Building
-Central Podium Levels (CPD) : Cheng Yu Tung Tower, Chi Wah Learning Commons, Lee Shau Kee Lecture Centre, Run Run Shaw Tower, The Jockey Club Tower
+Central Podium Levels (CPD) : Cheng Yu Tung Tower, Chi Wah Learning Commons, Lee Shau Kee Lecture Centre, Run Run Shaw Tower
 Cheng Yu Tung Tower : Central Podium Levels (CPD), Chow Yei Ching Building, Lui Che Woo Law Library, Run Run Shaw Tower, The Jockey Club Tower
 Chi Wah Learning Commons : Central Podium Levels (CPD), Lee Shau Kee Lecture Centre, Run Run Shaw Heritage House, Run Run Shaw Tower
 Chong Yuet Ming Amenities Centre : Chong Yuet Ming Fountain, Chong Yuet Ming Physics Building, Eliot Hall, K.K. Leung Building, Runme Shaw Building, Wong Chuang Lai Wah Building
@@ -44,7 +44,7 @@ Swire Hall : Fong Shu Chuen Amenities Centre, Global Lounge, T.T. Tsui Building,
 T.T. Tsui Building : Fung Ping Shan Building, Swire Hall
 Tang Chi Ngong Building : Swire Hall
 The Jockey Club Building : Graduate House
-The Jockey Club Tower : Central Podium Levels (CPD), Cheng Yu Tung Tower, Chow Yei Ching Building, Composite Building, Yu Chun Keung Tam Shuk Yin Learning Centre
+The Jockey Club Tower : Cheng Yu Tung Tower, Chow Yei Ching Building, Composite Building, Yu Chun Keung Tam Shuk Yin Learning Centre
 The University of Hong Kong Visitor Centre : Centennial Gate, Run Run Shaw Heritage House, Yam Pak Building
 University Drive No. 2 : Robert Black College
 University Lodge : Graduate House, Robert Black College
