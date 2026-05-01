@@ -55,7 +55,7 @@ Haking Wong Building,Hui Oi Chow Science Building,158,243,Direct connection,Y,N,
 HKU Station A2 Access,Haking Wong Building,23,42,Direct connection,Y,N,Y
 Hui Oi Chow Science Building,Library Building (Old Wing),16,28,Nil,N,N,N
 Hui Oi Chow Science Building,James Hsioung Lee Science Building,41,72,Nil,N,N,N
-Hui Oi Chow Science Building,Haking Wong Building,104,158,Y,N,N
+Hui Oi Chow Science Building,Haking Wong Building,104,158,Nil,Y,N,N
 Hui Oi Chow Science Building,Run Run Shaw Building,36,56,Nil,N,N,N
 Hui Oi Chow Science Building,Rayson Huang Theatre,67,99,Nil,N,N,N
 Hui Oi Chow Science Building,Sun Yat-sen Steps,32,53,Connected via walkways,N,Y,N
@@ -98,7 +98,7 @@ Meng Wah Complex,Eliot Hall,111,155,Nil,Y,N,Y
 Meng Wah Complex,Chong Yuet Ming Fountain,104,149,Nil,Y,N,Y
 Meng Wah Complex,Runme Shaw Building,60,90,Nil,Y,N,Y
 Meng Wah Complex,Wong Chuang Lai Wah Building,24,36,Nil,N,N,N
-Meng Wah Complex,Wong Chue Meng Building,24,36,Nil,N,N
+Meng Wah Complex,Wong Chue Meng Building,24,36,Nil,N,N,N
 Pao Siu Loong Building,Hung Hing Ying Building,61,107,Nil,N,Y,N
 Rayson Huang Theatre,Hui Oi Chow Science Building,63,100,Nil,N,N,N
 Rayson Huang Theatre,Run Run Shaw Building,23,42,Nil,N,N,N
@@ -138,8 +138,8 @@ Sun Yat-sen Steps,Run Run Shaw Building,33,54,Nil,N,Y,N
 Swire Hall,Fong Shu Chuen Amenities Centre,57,94,Nil,Y,N,Y
 Swire Hall,Global Lounge,41,72,Nil,Y,N,Y
 Swire Hall,Tang Chi Ngong Building,57,84,Nil,Y,N,Y
-Swire Hall,T.T. Tsui Building,46,73,N,N,N
-T.T. Tsui Building,Swire Hall,46,73,N,N,N
+Swire Hall,T.T. Tsui Building,46,73,Nil,N,N,N
+T.T. Tsui Building,Swire Hall,46,73,Nil,N,N,N
 T.T. Tsui Building,Fung Ping Shan Building,97,128,Nil,N,Y,N
 Tang Chi Ngong Building,Swire Hall,57,84,Nil,Y,N,Y
 The Jockey Club Building,Graduate House,49,86,Nil,N,N,N
@@ -152,7 +152,7 @@ The University of Hong Kong Visitor Centre,Centennial Gate,42,59,Nil,N,N,N
 The University of Hong Kong Visitor Centre,Run Run Shaw Heritage House,56,88,Nil,N,Y,N
 The University of Hong Kong Visitor Centre,Run Run Shaw Tower,34,60,Nil,N,Y,N
 The University of Hong Kong Visitor Centre,Yam Pak Building,148,215,Nil,N,Y,N
-University Drive No. 2,Robert Black College,77,Nil,115,N,N,N
+University Drive No. 2,Robert Black College,77,115,Nil,N,N,N
 University Lodge,Robert Black College,100,149,Nil,N,Y,N
 University Lodge,Graduate House,145,210,Nil,N,Y,N
 Wong Chuang Lai Wah Building,Meng Wah Complex,24,36,Nil,N,N,N
