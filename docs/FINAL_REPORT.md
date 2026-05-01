@@ -253,7 +253,7 @@ All files have been created in: `d:\Comp1110_E04\`
 Generated files:
 - Documentation: *.md files
 - Test scripts: *.py and *.cpp files
-- Original code: navigation.cpp, navigation.java
+- Original code: navigation.cpp
 
 ---
 

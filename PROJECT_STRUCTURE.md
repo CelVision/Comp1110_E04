@@ -16,8 +16,7 @@ Comp1110_E04/
 ├── src/                         # Source Code
 │   ├── navigation.cpp           # Core navigation classes (Building, Path)
 │   ├── interface.cpp            # User interface and system interaction
-│   ├── Read_data.cpp            # Data file processing utilities
-│   └── navigation.java          # Java reference implementation
+│   └── Read_data.cpp            # Data file processing utilities
 │
 ├── data/                        # Data Files
 │   ├── node.txt                 # 54 HKU buildings and their names
@@ -111,7 +110,6 @@ python tests/simple_verify.py
 - **navigation.cpp**: Core classes
 - **interface.cpp**: User interaction layer
 - **Read_data.cpp**: Data loading utilities
-- **navigation.java**: Reference implementation
 
 ### Data Files (`data/`)
 - **node.txt**: Building data (names)

@@ -21,7 +21,7 @@
 ```
 d:\Comp1110_E04\
 ├── navigation.cpp              (Main source - 2 classes)
-├── navigation.java             (Java reference implementation)
+
 ├── Read_data.cpp               (Data file processing utility)
 ├── Paths.txt                   (CSV with path data)
 ├── node.txt                    (List of 52 buildings)

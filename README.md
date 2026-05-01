@@ -48,22 +48,53 @@ This project provides a C++ framework for navigating the University of Hong Kong
 ## Project Structure
 
 ```
-Comp1110_E04\
-├── navigation.cpp              # Main source file (2 classes, 16 methods)
-├── interface.cpp               # Interactive user interface with file-based data loading
-├── navigation.java             # Java reference implementation
-├── Read_data.cpp               # Data file processing utility
-├── Paths.txt                   # CSV with 200+ path definitions
-├── node.txt                    # 54 buildings in HKU campus
-├── neighbor.txt                # 54 building adjacency relationships
-├── test_navigation.cpp         # C++ test suite
-├── test_fixes.py               # Python test suite (15 tests)
-├── simple_verify.py            # Windows-compatible test runner
-├── verify_navigation.py        # Original test suite
-├── QUICK_REFERENCE.md          # One-page summary
-├── ISSUES_FIXED.md             # Detailed fix explanations
-├── FIXES_COMPLETE.md           # Comprehensive analysis
-└── README.md                   # This file
+Comp1110_E04/
+│
+├── src/                        # Source Code
+│   ├── navigation.cpp          # Core navigation classes (Building, Path)
+│   ├── interface.cpp           # Interactive user interface with file-based data loading
+│   └── Read_data.cpp           # Data file processing utility
+│
+├── data/                       # Data Files
+│   ├── node.txt                # 54 buildings in HKU campus
+│   ├── neighbor.txt            # 54 building adjacency relationships
+│   └── Paths.txt               # CSV with 200+ path definitions
+│
+├── tests/                      # Test Files
+│   ├── test_navigation.cpp     # C++ test suite
+│   ├── test_menu.cpp           # Menu system tests
+│   ├── test_preference.cpp     # Preference handling tests
+│   ├── test_preference_detailed.cpp  # Detailed preference tests
+│   ├── minimal_test.cpp        # Minimal test suite
+│   ├── test_fixes.py           # Python test suite (15 tests)
+│   ├── simple_verify.py        # Windows-compatible test runner
+│   ├── verify_navigation.py    # Original test suite
+│   └── check_path.py           # Path verification utility
+│
+├── docs/                       # Documentation & Reports
+│   ├── README.md               # Full documentation (copy)
+│   ├── QUICK_REFERENCE.md      # One-page summary
+│   ├── ISSUES_FIXED.md         # Detailed fix explanations
+│   ├── FIXES_COMPLETE.md       # Comprehensive analysis
+│   ├── TEST_REPORT.md          # Test summary report
+│   ├── DETAILED_TEST_RESULTS.md # Detailed test results
+│   ├── VERIFICATION_SUMMARY.md # Verification summary
+│   ├── VERSION_CHANGELOG.md    # Version history
+│   ├── FINAL_REPORT.md         # Final project report
+│   ├── DEBUG_CHECKLIST.md      # Debugging reference
+│   └── reference_picture.png   # Campus reference image
+│
+├── build/                      # Compiled Executables
+│   ├── campus_nav.exe          # Main program executable
+│   ├── minimal_test.exe        # Minimal test executable
+│   ├── test_menu.exe           # Menu test executable
+│   ├── test_preference.exe     # Preference test executable
+│   └── test_preference_detailed.exe  # Detailed preference test
+│
+├── README.md                   # Main documentation (this file)
+├── PROJECT_STRUCTURE.md        # Detailed structure guide
+├── LICENSE                     # License file
+└── .git/                       # Version control
 ```
 
 ---
@@ -750,35 +781,46 @@ DETAILED ROUTE BREAKDOWN:
 
 ### Compilation - Core Library
 ```bash
-g++ -std=c++11 -Wall -Wextra -o program your_program.cpp
+# From root directory
+g++ -std=c++11 -Wall -Wextra -o build/campus_nav.exe src/navigation.cpp src/interface.cpp src/Read_data.cpp
 ```
 
-### Compilation - Interactive Interface
+### Compilation - With Modern C++ Standard
 ```bash
-g++ -std=c++11 -Wall -Wextra -o interface interface.cpp
+# From root directory (recommended)
+g++ -std=c++17 -Wall -Wextra -o build/campus_nav.exe src/navigation.cpp src/interface.cpp src/Read_data.cpp
 ```
 
-### Execution - Core Program
+### Execution - Main Program
 ```bash
-./program
-```
-
-### Execution - Interactive Interface
-```bash
-.\interface.exe
+# From root directory
+./build/campus_nav.exe
 ```
 
 ### Running Tests
 ```bash
-python test_fixes.py          # Full test suite (15 tests)
-python simple_verify.py       # Simple test runner
+# From root directory
+python tests/test_fixes.py          # Full test suite (15 tests)
+python tests/simple_verify.py       # Simple test runner
+./build/minimal_test.exe            # Compiled minimal tests
+./build/test_preference.exe         # Preference tests
 ```
+
+### File Paths
+The program expects to be run from the repository root directory. Data files are located in `data/` folder:
+- `data/node.txt` - Building data
+- `data/neighbor.txt` - Connections
+- `data/Paths.txt` - Path information
+
+**Note:** All relative paths are configured to work when executing from the root `Comp1110_E04/` directory.
 
 ---
 
 ## Data Files
 
-### node.txt
+All data files are located in the `data/` folder.
+
+### node.txt (`data/node.txt`)
 54 buildings in the HKU campus (one per line)
 
 Examples:
@@ -791,7 +833,7 @@ Main Building
 ... (54 total)
 ```
 
-### neighbor.txt  
+### neighbor.txt (`data/neighbor.txt`)
 Building adjacencies in format: `Building : Neighbor1, Neighbor2, ...`
 
 Examples:
@@ -800,7 +842,7 @@ Centennial Gate : The University of Hong Kong Visitor Centre, Run Run Shaw Herit
 Central Podium Levels (CPD) : Cheng Yu Tung Tower, Run Run Shaw Tower, Chi Wah Learning Commons, Lee Shau Kee Lecture Centre
 ```
 
-### Paths.txt
+### Paths.txt (`data/Paths.txt`)
 Detailed path information in CSV format with columns:
 ```
 FromBuilding,ToBuilding,TimeSpare(sec),TimePopular(sec),SpecialNotes,IsIndoors(Y/N),HasStairs&hills(Y/N),HasElevator&Escalator(Y/N)
