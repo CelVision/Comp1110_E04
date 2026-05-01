@@ -100,11 +100,13 @@ Run Run Shaw Building,Runme Shaw Building,64,102,Nil,N,N,N
 Run Run Shaw Heritage House,Centennial Gate,46,73,Nil,N,Y,N
 Run Run Shaw Heritage House,Chi Wah Learning Commons,129,185,Nil,N,Y,N
 Run Run Shaw Heritage House,Lee Shau Kee Lecture Centre,138,195,Nil,N,Y,N
+Run Run Shaw Heritage House, Run Run Shaw Tower, 30,52,Nil,N,Y,N
 Run Run Shaw Heritage House,The University of Hong Kong Visitor Centre,60,90,Nil,N,Y,N
 Run Run Shaw Tower,Central Podium Levels (CPD),24,41,Connected via podium levels,Y,N,Y
 Run Run Shaw Tower,Cheng Yu Tung Tower,70,112,Connected via walkways,Y,N,Y
-Run Run Shaw Tower,Chi Wah Learning Commons,49,96,In the sam building complex,Y,N,Y
-Run Run Shaw Tower,Lee Shau Kee Lecture Centre,108,155,In the sam building complex,Y,Y,Y
+Run Run Shaw Tower,Chi Wah Learning Commons,49,96,In the same building complex,Y,N,Y
+Run Run Shaw Tower,Lee Shau Kee Lecture Centre,108,155,In the same building complex,Y,Y,Y
+Run Run Shaw Tower,Run Run Shaw Heritage House, 30, 50, Nil, N,Y,N
 Runme Shaw Building,Meng Wah Complex,103,153,Nil,Y,N,Y
 Runme Shaw Building,Rayson Huang Theatre,51,91,Nil,N,N,N
 Runme Shaw Building,Run Run Shaw Building,66,104,Nil,N,N,N
@@ -116,7 +118,7 @@ Sun Yat-sen Steps,Lily Pond,39,72,Connected via walkways,N,Y,N
 Sun Yat-sen Steps,Sun Yat-sen Place,36,56,Nil,N,Y,N
 Swire Hall,Fong Shu Chuen Amenities Centre,57,94,Nil,N,N,N
 Swire Hall,Global Lounge,41,72,Nil,N,N,N
-T.T. Tsui Building,Fong Shu Chuen Amenities Centre,76,123,N,N,N
+T.T. Tsui Building,Fong Shu Chuen Amenities Centre,76,123,Nil,N,N,N
 T.T. Tsui Building,Fung Ping Shan Building,97,128,Nil,N,Y,N
 T.T. Tsui Building,Tang Chi Ngong Building,108,155,Nil,Y,N,Y
 Tang Chi Ngong Building,K.K. Leung Building,107,154,Nil,Y,N,Y
@@ -129,11 +131,11 @@ The Jockey Club Tower,Yu Chun Keung Tam Shuk Yin Learning Centre,21,40,Connected
 The University of Hong Kong Visitor Centre,Centennial Gate,42,59,Nil,N,N,N
 The University of Hong Kong Visitor Centre,Run Run Shaw Heritage House,99,147,Nil,N,Y,N
 The University of Hong Kong Visitor Centre,Yam Pak Building,148,215,Nil,N,Y,N
-University Drive No. 2,Robert Black College,77,Nil,115,N,N,N
+University Drive No. 2,Robert Black College,77,115,Nil,N,N,N
 University Lodge,Robert Black College,100,149,Nil,N,Y,N
 University Lodge,Graduate House,145,210,Nil,N,Y,N
 Wong Chuang Lai Wah Building,Wong Chue Meng Building,43,72,Nil,N,N,N
 Wong Chue Meng Building,Wong Chuang Lai Wah Building,44,72,Nil,N,N,N
-Yam Pak Building,Centennial Gate,180,300,Walk along Centennail campus path,N,Y,N
+Yam Pak Building,Centennial Gate,180,300,Walk along Centennial campus path,N,Y,N
 Yam Pak Building,The University of Hong Kong Visitor Centre,148,215,Nil,N,Y,N
 Yu Chun Keung Tam Shuk Yin Learning Centre,The Jockey Club Tower,23,40,Connected via walkways,Y,N,Y
