@@ -2,53 +2,53 @@ Centennial Gate : Run Run Shaw Heritage House, The University of Hong Kong Visit
 Central Podium Levels (CPD) : Cheng Yu Tung Tower, Chi Wah Learning Commons, Lee Shau Kee Lecture Centre, Run Run Shaw Tower
 Cheng Yu Tung Tower : Central Podium Levels (CPD), Chow Yei Ching Building, Lui Che Woo Law Library, Run Run Shaw Tower, The Jockey Club Tower
 Chi Wah Learning Commons : Central Podium Levels (CPD), Lee Shau Kee Lecture Centre, Run Run Shaw Heritage House, Run Run Shaw Tower
-Chong Yuet Ming Amenities Centre : Chong Yuet Ming Fountain, Chong Yuet Ming Physics Building, Eliot Hall, K.K. Leung Building, Runme Shaw Building, Wong Chuang Lai Wah Building
+Chong Yuet Ming Amenities Centre : Chong Yuet Ming Fountain, Chong Yuet Ming Physics Building, Eliot Hall, K.K. Leung Building
 Chong Yuet Ming Chemistry Building : Chong Yuet Ming Physics Building
 Chong Yuet Ming Fountain : Chong Yuet Ming Amenities Centre, Eliot Hall, Meng Wah Complex
 Chong Yuet Ming Physics Building : Chong Yuet Ming Amenities Centre, Chong Yuet Ming Chemistry Building, K.K. Leung Building
 Chow Yei Ching Building : Cheng Yu Tung Tower, Simon K.Y. Lee Hall, The Jockey Club Tower
 Composite Building : Haking Wong Building, Simon K.Y. Lee Hall, The Jockey Club Tower
 Eliot Hall : Chong Yuet Ming Amenities Centre, Chong Yuet Ming Fountain, May Hall, Meng Wah Complex
-Fong Shu Chuen Amenities Centre : Global Lounge, Swire Hall
+Fong Shu Chuen Amenities Centre : Global Lounge, Swire Hall, T.T. Tsui Building
 Fung Ping Shan Building : Knowles Building, T.T. Tsui Building
 Global Lounge : Fong Shu Chuen Amenities Centre, Swire Hall
 Graduate House : Robert Black College, The Jockey Club Building, University Lodge
 HKU Station A2 Access : Haking Wong Building
-Haking Wong Building : Composite Building, HKU Station A2 Access, Hui Oi Chow Science Building, Kadoorie Biological Sciences Building
-Hui Oi Chow Science Building : Haking Wong Building, James Hsioung Lee Science Building, Library Building (Old Wing), Rayson Huang Theatre, Run Run Shaw Building, Sun Yat-sen Steps
+Haking Wong Building : Composite Building, HKU Station A2 Access, Kadoorie Biological Sciences Building
+Hui Oi Chow Science Building : James Hsioung Lee Science Building, Rayson Huang Theatre, Run Run Shaw Building
 Hung Hing Ying Building : Loke Yew Hall, Main Building, Pao Siu Loong Building
 James Hsioung Lee Science Building : Hui Oi Chow Science Building
-K.K. Leung Building : Chong Yuet Ming Amenities Centre, Chong Yuet Ming Physics Building, Knowles Building
-Kadoorie Biological Sciences Building : Haking Wong Building, Library Building (New Wing)
-Knowles Building : Fung Ping Shan Building, K.K. Leung Building, Lily Pond, Sun Yat-sen Place
+K.K. Leung Building : Chong Yuet Ming Amenities Centre, Chong Yuet Ming Physics Building, Tang Chi Ngong Building
+Kadoorie Biological Sciences Building : Haking Wong Building, Pao Siu Loong Building
+Knowles Building : Fung Ping Shan Building, Lily Pond
 Lee Shau Kee Lecture Centre : Central Podium Levels (CPD), Chi Wah Learning Commons, Run Run Shaw Heritage House, Run Run Shaw Tower
-Library Building (New Wing) : Kadoorie Biological Sciences Building, Library Building (Old Wing), Main Building, Sun Yat-sen Place
-Library Building (Old Wing) : Hui Oi Chow Science Building, Library Building (New Wing), Sun Yat-sen Steps
+Library Building (New Wing) : Library Building (Old Wing), Main Building
+Library Building (Old Wing) : Library Building (New Wing), Sun Yat-sen Place
 Lily Pond : Knowles Building, Sun Yat-sen Steps
 Loke Yew Hall : Hung Hing Ying Building, Main Building
 Lui Che Woo Law Library : Cheng Yu Tung Tower
 Main Building : Hung Hing Ying Building, Library Building (New Wing), Loke Yew Hall
 May Hall : Eliot Hall, Meng Wah Complex
-Meng Wah Complex : Chong Yuet Ming Fountain, Eliot Hall, May Hall, Runme Shaw Building, Wong Chuang Lai Wah Building, Wong Chue Meng Building
-Pao Siu Loong Building : Hung Hing Ying Building
+Meng Wah Complex : Chong Yuet Ming Fountain, Eliot Hall, May Hall, Runme Shaw Building
+Pao Siu Loong Building : Hung Hing Ying Building, Kadoorie Biological Sciences Building
 Rayson Huang Theatre : Hui Oi Chow Science Building, Run Run Shaw Building, Runme Shaw Building
 Robert Black College : Graduate House, University Drive No. 2, University Lodge
-Run Run Shaw Building : Hui Oi Chow Science Building, Rayson Huang Theatre, Runme Shaw Building, Sun Yat-sen Steps
+Run Run Shaw Building : Hui Oi Chow Science Building, Rayson Huang Theatre, Runme Shaw Building
 Run Run Shaw Heritage House : Centennial Gate, Chi Wah Learning Commons, Lee Shau Kee Lecture Centre, The University of Hong Kong Visitor Centre
 Run Run Shaw Tower : Central Podium Levels (CPD), Cheng Yu Tung Tower, Chi Wah Learning Commons, Lee Shau Kee Lecture Centre
-Runme Shaw Building : Chong Yuet Ming Amenities Centre, Meng Wah Complex, Rayson Huang Theatre, Run Run Shaw Building
+Runme Shaw Building : Meng Wah Complex, Rayson Huang Theatre, Run Run Shaw Building
 Simon K.Y. Lee Hall : Chow Yei Ching Building, Composite Building
-Sun Yat-sen Place : Knowles Building, Library Building (New Wing), Sun Yat-sen Steps
-Sun Yat-sen Steps : Hui Oi Chow Science Building, Library Building (Old Wing), Lily Pond, Run Run Shaw Building, Sun Yat-sen Place
-Swire Hall : Fong Shu Chuen Amenities Centre, Global Lounge, T.T. Tsui Building, Tang Chi Ngong Building
-T.T. Tsui Building : Fung Ping Shan Building, Swire Hall
-Tang Chi Ngong Building : Swire Hall
+Sun Yat-sen Place : Library Building (Old Wing), Sun Yat-sen Steps
+Sun Yat-sen Steps : Lily Pond, Sun Yat-sen Place
+Swire Hall : Fong Shu Chuen Amenities Centre, Global Lounge
+T.T. Tsui Building : Fong Shu Chuen Amenities Centre, Fung Ping Shan Building, Tang Chi Ngong Building
+Tang Chi Ngong Building : K.K. Leung Building, T.T. Tsui Building
 The Jockey Club Building : Graduate House
 The Jockey Club Tower : Cheng Yu Tung Tower, Chow Yei Ching Building, Composite Building, Yu Chun Keung Tam Shuk Yin Learning Centre
 The University of Hong Kong Visitor Centre : Centennial Gate, Run Run Shaw Heritage House, Yam Pak Building
 University Drive No. 2 : Robert Black College
 University Lodge : Graduate House, Robert Black College
-Wong Chuang Lai Wah Building : Chong Yuet Ming Amenities Centre, Meng Wah Complex
-Wong Chue Meng Building : Meng Wah Complex
+Wong Chuang Lai Wah Building : Wong Chue Meng Building
+Wong Chue Meng Building : Wong Chuang Lai Wah Building
 Yam Pak Building : Centennial Gate, The University of Hong Kong Visitor Centre
 Yu Chun Keung Tam Shuk Yin Learning Centre : The Jockey Club Tower
