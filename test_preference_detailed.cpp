@@ -85,7 +85,6 @@ public:
     
     /**
      * Find the SHORTEST TIME path between two buildings using Dijkstra
-     * (CORRECT for weighted graph - uses timeSpare as weight)
      * preference: 0 = no preference, 1 = avoid outdoors, 2 = avoid stairs
      */
     std::vector<std::string> findPath(const std::string& start, const std::string& end, int preference = 0) {
@@ -107,7 +106,6 @@ public:
         }
         dist[start] = 0.0f;
     
-
         using P = std::pair<float, std::string>;
         std::priority_queue<P, std::vector<P>, std::greater<P>> pq;
         pq.push({0.0f, start});
@@ -120,14 +118,12 @@ public:
             if (visited[current]) continue;
             visited[current] = true;
     
-            if (current == end) break; // exit if we reached the destination
+            if (current == end) break;
     
-            // go through neighbors
             Building* b = buildings[current];
             for (Building* neighbor : b->getNeighbors()) {
                 std::string next = neighbor->getName();
     
-                // get the weight
                 Path* p = findPathInfo(current, next);
                 if (!p) continue;
     
@@ -142,7 +138,6 @@ public:
                     weight *= 5.0f;
                 }
     
-
                 if (dist[next] > dist[current] + weight) {
                     dist[next] = dist[current] + weight;
                     parent[next] = current;
@@ -151,12 +146,10 @@ public:
             }
         }
     
-        // no path found
         if (parent[end].empty()) {
             return {};
         }
     
-        // get path
         std::vector<std::string> path;
         std::string node = end;
         while (!node.empty()) {
@@ -253,7 +246,6 @@ std::vector<std::string> readBuildingsFromFile(const std::string& filename) {
     
     std::string line;
     while (std::getline(file, line)) {
-        // Trim whitespace
         line.erase(0, line.find_first_not_of(" \t\r\n"));
         line.erase(line.find_last_not_of(" \t\r\n") + 1);
         
@@ -280,24 +272,20 @@ std::map<std::string, std::vector<std::string>> readNeighborsFromFile(const std:
     
     std::string line;
     while (std::getline(file, line)) {
-        // Format: "Building : Neighbor1, Neighbor2, ..."
         size_t colonPos = line.find(":");
         if (colonPos == std::string::npos) continue;
         
         std::string building = line.substr(0, colonPos);
         std::string neighborsList = line.substr(colonPos + 1);
         
-        // Trim building name
         building.erase(0, building.find_first_not_of(" \t\r\n"));
         building.erase(building.find_last_not_of(" \t\r\n") + 1);
         
-        // Parse neighbors
         std::vector<std::string> buildingNeighbors;
         std::stringstream ss(neighborsList);
         std::string neighbor;
         
         while (std::getline(ss, neighbor, ',')) {
-            // Trim neighbor name
             neighbor.erase(0, neighbor.find_first_not_of(" \t\r\n"));
             neighbor.erase(neighbor.find_last_not_of(" \t\r\n") + 1);
             
@@ -342,13 +330,11 @@ std::vector<PathData> readPathsFromFile(const std::string& filename) {
     bool firstLine = true;
     
     while (std::getline(file, line)) {
-        // Skip header line
         if (firstLine) {
             firstLine = false;
             continue;
         }
         
-        // Skip empty lines
         if (line.empty()) continue;
         
         std::stringstream ss(line);
@@ -357,7 +343,6 @@ std::vector<PathData> readPathsFromFile(const std::string& filename) {
         int fieldCount = 0;
         
         while (std::getline(ss, field, ',') && fieldCount < 8) {
-            // Trim field
             field.erase(0, field.find_first_not_of(" \t\r\n"));
             field.erase(field.find_last_not_of(" \t\r\n") + 1);
             
@@ -377,14 +362,12 @@ std::vector<PathData> readPathsFromFile(const std::string& filename) {
                     case 7: pathData.hasElevator = (field == "Y" || field == "y"); break;
                 }
             } catch (...) {
-                // Skip invalid rows
                 break;
             }
             
             fieldCount++;
         }
         
-        // Only add if we have all required fields
         if (fieldCount == 8 && !pathData.from.empty() && !pathData.to.empty()) {
             paths.push_back(pathData);
         }
@@ -398,7 +381,6 @@ std::vector<PathData> readPathsFromFile(const std::string& filename) {
  * Load real data from files
  */
 void loadRealData(NavigationSystem& system) {
-    // Read buildings
     std::cout << "Reading buildings from node.txt...\n" << std::flush;
     std::vector<std::string> buildings = readBuildingsFromFile("node.txt");
     std::cout << "  Loaded " << buildings.size() << " buildings\n" << std::flush;
@@ -407,7 +389,6 @@ void loadRealData(NavigationSystem& system) {
         system.addBuilding(building);
     }
     
-    // Read neighbors and connect buildings
     std::cout << "Reading connections from neighbor.txt...\n" << std::flush;
     std::map<std::string, std::vector<std::string>> neighbors = readNeighborsFromFile("neighbor.txt");
     std::cout << "  Loaded " << neighbors.size() << " building connections\n" << std::flush;
@@ -419,13 +400,11 @@ void loadRealData(NavigationSystem& system) {
         }
     }
     
-    // Read paths
     std::cout << "Reading paths from Paths.txt...\n" << std::flush;
     std::vector<PathData> paths = readPathsFromFile("Paths.txt");
     std::cout << "  Loaded " << paths.size() << " paths\n" << std::flush;
     
     for (const auto& path : paths) {
-        // Convert seconds to minutes for display
         float timeSpareMin = path.timeSpare / 60.0f;
         float timePopularMin = path.timePopular / 60.0f;
         
@@ -435,202 +414,69 @@ void loadRealData(NavigationSystem& system) {
 }
 
 /**
- * Display preference menu and get user choice
- * Returns: 0 = no preference, 1 = avoid outdoors, 2 = avoid stairs
+ * Test function - find routes with different preferences and show details
  */
-int displayPreferenceMenu() {
-    std::cout << "\n" << std::string(50, '=') << "\n";
-    std::cout << "SELECT YOUR ROUTE PREFERENCE:\n";
-    std::cout << std::string(50, '=') << "\n";
-    std::cout << "1. No preference\n";
-    std::cout << "2. Avoid outdoors\n";
-    std::cout << "3. Avoid stairs\n";
-    std::cout << std::string(50, '=') << "\n";
-    std::cout << "Choice: ";
-    std::cout.flush();
+void testPreference(NavigationSystem& system, const std::string& start, const std::string& end) {
+    std::cout << "\n" << std::string(80, '=') << "\n";
+    std::cout << "TESTING: " << start << " -> " << end << "\n";
+    std::cout << std::string(80, '=') << "\n";
     
-    int choice;
-    if (!(std::cin >> choice)) {
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cerr << "Input error! Please enter a number." << std::endl;
-        return 0;
-    }
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    
-    if (choice < 1 || choice > 3) {
-        std::cout << "Invalid selection! Using no preference.\n";
-        return 0;
-    }
-    
-    return choice - 1; // Convert to 0-indexed (0, 1, or 2)
-}
-
-/**
- * Display menu and get user choice
- */
-int displayMainMenu() {
-    std::cout << "Menu about to print" << std::endl;
-    std::cout << "\n1. Find Path\n2. List Buildings\n3. Exit\n";
-    std::cout << "Choice: ";
-    std::cout.flush();
-    
-    int choice;
-    if (!(std::cin >> choice)) {
-        // Clear error state and flush input buffer
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cerr << "Input error! Please enter a number." << std::endl;
-        return -1;
-    }
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    std::cout << "Got choice: " << choice << std::endl;
-    return choice;
-}
-
-/**
- * Display all buildings with numbering
- */
-int selectBuilding(const std::vector<std::string>& buildings, const std::string& prompt) {
-    std::cout << "\n" << prompt << "\n";
-    std::cout << "=========================================================\n";
-    
-    for (size_t i = 0; i < buildings.size(); ++i) {
-        std::cout << std::setw(3) << (i + 1) << ". " << buildings[i] << "\n";
-    }
-    
-    std::cout << "=========================================================\n";
-    std::cout << "Enter building number: ";
-    std::cout.flush();
-    
-    int choice;
-    if (!(std::cin >> choice)) {
-        // Input failed - clear error state and skip to next line
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::cout << "Invalid input! Please enter a number.\n";
-        return -1;
-    }
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    
-    if (choice < 1 || choice > (int)buildings.size()) {
-        std::cout << "Invalid selection! Please enter a number between 1 and " << buildings.size() << ".\n";
-        return -1;
-    }
-    
-    return choice - 1;
-}
-
-/**
- * Display path results
- */
-void displayPathResults(const NavigationSystem::RouteInfo& route) {
-    if (route.route.empty()) {
-        std::cout << "\nNo path found between selected buildings!\n";
+    // Test with no preference
+    std::cout << "\n[ROUTE 1: NO PREFERENCE]\n";
+    auto route0 = system.calculateRoute(start, end, 0);
+    if (route0.route.empty()) {
+        std::cout << "No path found\n";
         return;
     }
-    
+    std::cout << "Time: " << std::fixed << std::setprecision(2) << route0.totalTimeSpare << " min\n";
+    int outdoorCount0 = 0;
+    for (const auto& seg : route0.segments) {
+        if (!seg.indoors) outdoorCount0++;
+    }
+    std::cout << "Outdoor: " << outdoorCount0 << " seg(s) | Indoor: " << (route0.segments.size() - outdoorCount0) << " seg(s)\n";
+    std::cout << "Path: ";
+    for (size_t i = 0; i < route0.route.size(); ++i) {
+        std::cout << route0.route[i];
+        if (i < route0.route.size() - 1) std::cout << " -> ";
+    }
     std::cout << "\n";
-    std::cout << "=========================================================\n";
-    std::cout << "                    NAVIGATION RESULTS                  \n";
-    std::cout << "=========================================================\n";
     
-    // Route overview
-    std::cout << "\nCOMPLETE ROUTE:\n";
-    std::cout << "---------\n";
-    for (size_t i = 0; i < route.route.size(); ++i) {
-        std::cout << "  " << std::setw(2) << (i + 1) << ". " << route.route[i] << "\n";
-        if (i < route.route.size() - 1) {
-            std::cout << "       |\n";
+    // Test with avoid outdoor preference
+    std::cout << "\n[ROUTE 2: AVOID OUTDOORS]\n";
+    auto route1 = system.calculateRoute(start, end, 1);
+    if (route1.route.empty()) {
+        std::cout << "No path found\n";
+        return;
+    }
+    std::cout << "Time: " << std::fixed << std::setprecision(2) << route1.totalTimeSpare << " min\n";
+    int outdoorCount1 = 0;
+    for (const auto& seg : route1.segments) {
+        if (!seg.indoors) outdoorCount1++;
+    }
+    std::cout << "Outdoor: " << outdoorCount1 << " seg(s) | Indoor: " << (route1.segments.size() - outdoorCount1) << " seg(s)\n";
+    std::cout << "Path: ";
+    for (size_t i = 0; i < route1.route.size(); ++i) {
+        std::cout << route1.route[i];
+        if (i < route1.route.size() - 1) std::cout << " -> ";
+    }
+    std::cout << "\n";
+    
+    // Compare
+    std::cout << "\n[ANALYSIS]\n";
+    if (route0.route == route1.route) {
+        std::cout << "✗ Routes IDENTICAL (no preference change)\n";
+        if (outdoorCount0 > 0) {
+            std::cout << "  Note: Both routes have " << outdoorCount0 << " outdoor segment(s)\n";
+            std::cout << "  Reason: No better indoor-only alternative exists\n";
+        }
+    } else {
+        std::cout << "✓ Routes DIFFERENT - PREFERENCE WORKING!\n";
+        if (outdoorCount1 < outdoorCount0) {
+            std::cout << "  Outdoor segments reduced: " << outdoorCount0 << " -> " << outdoorCount1 << "\n";
+            std::cout << "  Time impact: " << std::fixed << std::setprecision(2) 
+                      << route1.totalTimeSpare << " min (vs " << route0.totalTimeSpare << " min)\n";
         }
     }
-    
-    // Time summary
-    std::cout << "\nTIME SUMMARY:\n";
-    std::cout << "---------\n";
-    std::cout << "  Spare Time (less crowded):    " 
-              << std::fixed << std::setprecision(1) << route.totalTimeSpare 
-              << " minutes\n";
-    std::cout << "  Popular Time (crowded):       " 
-              << std::fixed << std::setprecision(1) << route.totalTimePopular 
-              << " minutes\n";
-    
-    // Detailed segments
-    std::cout << "\nDETAILED ROUTE BREAKDOWN:\n";
-    std::cout << "---------\n";
-    
-    for (size_t i = 0; i < route.segments.size(); ++i) {
-        const auto& segment = route.segments[i];
-        
-        std::cout << "\n  Segment " << (i + 1) << ":\n";
-        std::cout << "    From: " << segment.from << "\n";
-        std::cout << "    To:   " << segment.to << "\n";
-        std::cout << "    Spare Time: " << std::fixed << std::setprecision(1) 
-                  << segment.timeSpare << " min | "
-                  << "Popular Time: " << segment.timePopular << " min\n";
-        
-        // Accessibility info
-        std::cout << "    Environment: ";
-        if (segment.indoors) {
-            std::cout << "Indoor";
-        } else {
-            std::cout << "Outdoor";
-        }
-        std::cout << "\n";
-        
-        std::cout << "    Accessibility: ";
-        std::vector<std::string> features;
-        if (segment.elevator) features.push_back("Elevator/Escalator");
-        if (segment.stairs) features.push_back("Stairs/Ramp");
-        if (features.empty()) {
-            std::cout << "Standard path";
-        } else {
-            for (size_t j = 0; j < features.size(); ++j) {
-                std::cout << features[j];
-                if (j < features.size() - 1) std::cout << " | ";
-            }
-        }
-        std::cout << "\n";
-        
-        // Special notes
-        if (!segment.specials.empty()) {
-            std::cout << "    Notes: " << segment.specials << "\n";
-        }
-    }
-    
-    std::cout << "\n=========================================================\n";
-}
-
-/**
- * Load default test data
- */
-void loadTestData(NavigationSystem& system) {
-    // Add buildings from the campus
-    system.addBuilding("Main Building");
-    system.addBuilding("Library Building");
-    system.addBuilding("Science Building");
-    system.addBuilding("Central Hub");
-    system.addBuilding("Cafeteria");
-    system.addBuilding("Sports Center");
-    system.addBuilding("Student Center");
-    
-    // Connect buildings
-    system.connectBuildings("Main Building", "Library Building");
-    system.connectBuildings("Main Building", "Central Hub");
-    system.connectBuildings("Library Building", "Science Building");
-    system.connectBuildings("Central Hub", "Cafeteria");
-    system.connectBuildings("Cafeteria", "Sports Center");
-    system.connectBuildings("Central Hub", "Student Center");
-    system.connectBuildings("Science Building", "Sports Center");
-    
-    // Add path details
-    system.addPath("Main Building", "Library Building", 5.0, 8.0, "Covered walkway", true, true, false);
-    system.addPath("Main Building", "Central Hub", 3.0, 5.0, "", true, false, false);
-    system.addPath("Library Building", "Science Building", 10.0, 15.0, "Outdoor", false, false, true);
-    system.addPath("Central Hub", "Cafeteria", 2.0, 3.0, "Indoor corridor", true, true, false);
-    system.addPath("Cafeteria", "Sports Center", 7.0, 10.0, "Scenic route", false, false, true);
-    system.addPath("Central Hub", "Student Center", 4.0, 6.0, "Covered path", true, false, false);
-    system.addPath("Science Building", "Sports Center", 8.0, 12.0, "", false, false, true);
 }
 
 /**
@@ -643,72 +489,34 @@ int main() {
     loadRealData(system);
     std::cout << "Campus data loaded successfully!\n" << std::flush;
     
-    bool running = true;
-    while (running) {
-        int choice = displayMainMenu();
-        
-        // Skip invalid input and retry
-        if (choice == -1) {
-            continue;
-        }
-        
-        switch (choice) {
-            case 1: {
-                // Find path
-                std::vector<std::string> buildings = system.getAllBuildingNames();
-                
-                int startIdx = selectBuilding(buildings, "SELECT STARTING BUILDING:");
-                if (startIdx == -1) {
-                    std::cout << "Please try again.\n";
-                    break;
-                }
-                
-                int endIdx = selectBuilding(buildings, "SELECT ENDING BUILDING:");
-                if (endIdx == -1) {
-                    std::cout << "Please try again.\n";
-                    break;
-                }
-                
-                std::string startBuilding = buildings[startIdx];
-                std::string endBuilding = buildings[endIdx];
-                
-                if (startBuilding == endBuilding) {
-                    std::cout << "\nStart and end buildings must be different!\n";
-                    break;
-                }
-                
-                // Display preference menu
-                int preference = displayPreferenceMenu();
-                
-                std::cout << "\nCalculating route...\n";
-                NavigationSystem::RouteInfo route = system.calculateRoute(startBuilding, endBuilding, preference);
-                displayPathResults(route);
-                break;
+    std::vector<std::string> buildings = system.getAllBuildingNames();
+    std::cout << "\nTotal buildings: " << buildings.size() << "\n";
+    
+    // Scan for routes with outdoor paths
+    std::cout << "\nScanning for routes with outdoor segments...\n";
+    int testedCount = 0;
+    int differentCount = 0;
+    
+    for (size_t i = 0; i < buildings.size() && testedCount < 10; ++i) {
+        for (size_t j = i + 1; j < buildings.size() && testedCount < 10; ++j) {
+            auto route0 = system.calculateRoute(buildings[i], buildings[j], 0);
+            if (route0.route.empty()) continue;
+            
+            // Check if this route has outdoor segments
+            int outdoorCount = 0;
+            for (const auto& seg : route0.segments) {
+                if (!seg.indoors) outdoorCount++;
             }
             
-            case 2: {
-                // List all buildings
-                std::vector<std::string> buildings = system.getAllBuildingNames();
-                std::cout << "\nAvailable Buildings:\n";
-                    std::cout << "=========================================\n";
-                    for (size_t i = 0; i < buildings.size(); ++i) {
-                        std::cout << std::setw(2) << (i + 1) << ". " << buildings[i] << "\n";
-                    }
-                    std::cout << "=========================================\n";
-                break;
+            if (outdoorCount > 0) {
+                testPreference(system, buildings[i], buildings[j]);
+                testedCount++;
             }
-            
-            case 3: {
-                // Exit
-                std::cout << "\nThank you for using HKU Campus Navigation System!\n";
-                running = false;
-                break;
-            }
-            
-            default:
-                std::cout << "\nInvalid choice! Please enter 1-3.\n";
         }
     }
+    
+    std::cout << "\n" << std::string(80, '=') << "\n";
+    std::cout << "Testing completed! Found " << testedCount << " routes with outdoor segments.\n";
     
     return 0;
 }
