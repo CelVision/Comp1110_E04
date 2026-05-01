@@ -1,9 +1,9 @@
 # Campus Navigation System - Complete Documentation
 
 **Project:** HKU Comp1110 Group E04  
-**Version:** 2.1 (Real Data Integration)  
-**Date:** 2026-04-24  
-**Status:** ✅ Production Ready with Real Campus Data
+**Version:** 2.2 (Custom Data Support)  
+**Date:** 2026-05-02  
+**Status:** ✅ Production Ready with Real Campus Data & Custom Data Support
 
 ---
 
@@ -16,9 +16,10 @@
 5. [Usage Examples](#usage-examples)
 6. [Compilation and Execution](#compilation-and-execution)
 7. [Data Files](#data-files)
-8. [Error Handling](#error-handling)
-9. [Best Practices](#best-practices)
-10. [Testing](#testing)
+8. [Using Custom/New Data](#using-custom-new-data)
+9. [Error Handling](#error-handling)
+10. [Best Practices](#best-practices)
+11. [Testing](#testing)
 
 ---
 
@@ -810,6 +811,285 @@ Examples:
 Centennial Gate,The University of Hong Kong Visitor Centre,60,90,"Lots of tourists",N,N,Y
 Central Podium Levels (CPD),Cheng Yu Tung Tower,45,60,"Indoor corridor access",Y,N,Y
 ```
+
+---
+
+## Using Custom/New Data
+
+This section explains how to add your own buildings, neighbors, and paths to the navigation system.
+
+### Overview
+
+The system uses three text files to define the navigation graph:
+1. **node.txt** - List of all buildings/nodes
+2. **neighbor.txt** - Adjacency relationships between buildings
+3. **Paths.txt** - Detailed path information with travel times
+
+### Format Specifications
+
+#### 1. node.txt Format
+**Purpose:** Define all buildings/nodes in your navigation system
+
+**Format:**
+```
+BuildingName1
+BuildingName2
+BuildingName3
+...
+```
+
+**Rules:**
+- One building name per line
+- No empty lines (except final newline)
+- Building names are case-sensitive
+- Names can contain spaces and special characters
+- Each name must be unique
+
+**Example (3 buildings):**
+```
+Main Library
+Science Complex
+Administration Building
+```
+
+**What to Do:**
+1. Open `node.txt` in a text editor
+2. Delete existing content (if replacing)
+3. List each building name on a new line
+4. Save the file (UTF-8 encoding recommended)
+
+---
+
+#### 2. neighbor.txt Format
+**Purpose:** Define which buildings are directly connected/adjacent
+
+**Format:**
+```
+BuildingName : Neighbor1, Neighbor2, Neighbor3, ...
+AnotherBuilding : Neighbor1, Neighbor2, ...
+```
+
+**Rules:**
+- Use colon `:` to separate building name from neighbors
+- Separate multiple neighbors with comma `,`
+- Add space after comma for readability
+- Building names must exactly match those in node.txt (case-sensitive)
+- A building can have 0 or more neighbors
+- All neighbors must exist in node.txt
+
+**Example (3 buildings with connections):**
+```
+Main Library : Science Complex, Administration Building
+Science Complex : Main Library
+Administration Building : Main Library, Science Complex
+```
+
+**What to Do:**
+1. Open `neighbor.txt` in a text editor
+2. For each building in node.txt, create one line
+3. After the colon, list all adjacent buildings
+4. If a building has no neighbors, just write the building name followed by `:`
+5. Save the file
+
+**Notes:**
+- If Building A → Building B exists, you should also define B → A (make connections bidirectional)
+- The system doesn't automatically create reverse connections
+
+---
+
+#### 3. Paths.txt Format
+**Purpose:** Define detailed path information between directly connected buildings
+
+**Format (CSV Header):**
+```
+FromBuilding,ToBuilding,TimeSpare(sec),TimePopular(sec),SpecialNotes,IsIndoors(Y/N),HasStairs&hills(Y/N),HasElevator&Escalator(Y/N)
+```
+
+**Column Definitions:**
+
+| Column | Type | Description | Range/Values |
+|--------|------|-------------|------|
+| FromBuilding | String | Source building name | Must match node.txt |
+| ToBuilding | String | Destination building name | Must match node.txt |
+| TimeSpare(sec) | Number | Travel time during off-peak hours (seconds) | 0 to 1440 (0-24 min) |
+| TimePopular(sec) | Number | Travel time during peak hours (seconds) | 0 to 1440 (0-24 min) |
+| SpecialNotes | String | Additional path information | Any text, use quotes if contains comma |
+| IsIndoors(Y/N) | Y or N | Is the path indoors? | Y = Yes, N = No |
+| HasStairs&hills(Y/N) | Y or N | Does path have stairs or hills? | Y = Yes, N = No |
+| HasElevator&Escalator(Y/N) | Y or N | Elevator or escalator available? | Y = Yes, N = No |
+
+**Rules:**
+- First line must be the header (exactly as shown)
+- One path definition per line
+- Paths are directional (A→B is different from B→A)
+- FromBuilding and ToBuilding must exist in node.txt
+- Both buildings should be connected in neighbor.txt (optional but recommended)
+- Use Y or N for boolean columns (not Yes/No or 1/0)
+- Special notes can contain any text; use double quotes if they contain commas
+
+**Example (3 paths):**
+```
+FromBuilding,ToBuilding,TimeSpare(sec),TimePopular(sec),SpecialNotes,IsIndoors(Y/N),HasStairs&hills(Y/N),HasElevator&Escalator(Y/N)
+Main Library,Science Complex,45,70,Outdoor corridor,N,Y,N
+Science Complex,Main Library,50,75,Outdoor corridor,N,Y,N
+Administration Building,Main Library,30,50,"Via main plaza, well-lit",N,N,Y
+```
+
+**What to Do:**
+1. Open `Paths.txt` in a text editor or spreadsheet application
+2. Ensure the header row is present and unchanged
+3. Add one line per directional path
+4. Calculate travel times in seconds (multiply minutes by 60)
+5. For boolean columns, use only Y or N (uppercase)
+6. Save as CSV format (UTF-8 encoding)
+
+**Important Notes:**
+- For bidirectional paths (A↔B), create two entries:
+  - FromBuilding: A, ToBuilding: B
+  - FromBuilding: B, ToBuilding: A
+- Times can differ based on terrain, weather, congestion
+- Times are in seconds; convert minutes: 5 min = 300 sec
+- The system uses these times for shortest-path calculations
+
+---
+
+### Step-by-Step: Adding New Data
+
+#### Step 1: Prepare node.txt
+1. List all your buildings/locations
+2. One per line, no duplicates
+3. Save the file
+
+**Example:**
+```
+Building A
+Building B
+Building C
+Building D
+```
+
+#### Step 2: Prepare neighbor.txt
+1. For each building, list its directly connected neighbors
+2. Format: `BuildingName : Neighbor1, Neighbor2, ...`
+3. Save the file
+
+**Example:**
+```
+Building A : Building B, Building C
+Building B : Building A, Building D
+Building C : Building A
+Building D : Building B
+```
+
+#### Step 3: Prepare Paths.txt
+1. Start with the CSV header
+2. Add one line per directional path
+3. Include travel times and accessibility info
+4. Save as CSV (can use Excel/LibreOffice)
+
+**Example:**
+```
+FromBuilding,ToBuilding,TimeSpare(sec),TimePopular(sec),SpecialNotes,IsIndoors(Y/N),HasStairs&hills(Y/N),HasElevator&Escalator(Y/N)
+Building A,Building B,60,90,Outdoor path,N,N,N
+Building B,Building A,60,90,Outdoor path,N,N,N
+Building A,Building C,45,70,Covered walkway,Y,Y,Y
+Building C,Building A,45,70,Covered walkway,Y,Y,Y
+Building B,Building D,120,180,Long path,N,Y,N
+Building D,Building B,120,180,Long path,N,Y,N
+```
+
+#### Step 4: Replace Files
+1. Backup original files (if needed): `node.txt.bak`, `neighbor.txt.bak`, `Paths.txt.bak`
+2. Replace the three files in the workspace directory
+3. Verify file locations:
+   - `d:\Comp1110_E04\node.txt`
+   - `d:\Comp1110_E04\neighbor.txt`
+   - `d:\Comp1110_E04\Paths.txt`
+
+#### Step 5: Test Your Data
+Run the verification script:
+```bash
+python test_fixes.py
+```
+
+Or test through the interface:
+1. Compile: `g++ -o interface interface.cpp`
+2. Run: `.\interface.exe`
+3. Test navigation between your buildings
+
+---
+
+### Validation & Troubleshooting
+
+#### Common Issues
+
+**Issue 1: Building not found**
+- **Cause:** Building name in neighbor.txt or Paths.txt doesn't match node.txt exactly (case-sensitive)
+- **Fix:** Verify exact spelling and case in all files
+
+**Issue 2: Neighbor error**
+- **Cause:** Neighbor listed in neighbor.txt doesn't exist in node.txt
+- **Fix:** Ensure all neighbors are defined in node.txt
+
+**Issue 3: Invalid time values**
+- **Cause:** TimeSpare or TimePopular > 1440 seconds (24 minutes) or negative
+- **Fix:** Recalculate times; maximum 1440 seconds per path
+
+**Issue 4: Path not found during navigation**
+- **Cause:** Path exists in neighbor.txt but not in Paths.txt
+- **Fix:** Add corresponding path entry to Paths.txt
+
+**Issue 5: CSV parsing error**
+- **Cause:** Inconsistent column count or missing columns
+- **Fix:** Verify all rows have 8 columns; check header is exactly as specified
+
+#### Validation Checklist
+
+Before running the system with new data:
+
+- [ ] All building names in neighbor.txt exist in node.txt
+- [ ] All building names in Paths.txt (FromBuilding, ToBuilding) exist in node.txt
+- [ ] All neighbors in neighbor.txt are bidirectional (if A→B, then B→A should exist)
+- [ ] All paths in neighbor.txt have corresponding entries in Paths.txt
+- [ ] Time values are between 0 and 1440 seconds
+- [ ] IsIndoors, HasStairs&hills, HasElevator&Escalator are Y or N only
+- [ ] Paths.txt header row is present and unchanged
+- [ ] No empty lines in node.txt or neighbor.txt
+- [ ] File encodings are UTF-8 (recommended)
+
+---
+
+### Example: Complete Mini System
+
+Here's a complete example with 3 buildings:
+
+**node.txt:**
+```
+North Tower
+Central Plaza
+South Wing
+```
+
+**neighbor.txt:**
+```
+North Tower : Central Plaza
+Central Plaza : North Tower, South Wing
+South Wing : Central Plaza
+```
+
+**Paths.txt:**
+```
+FromBuilding,ToBuilding,TimeSpare(sec),TimePopular(sec),SpecialNotes,IsIndoors(Y/N),HasStairs&hills(Y/N),HasElevator&Escalator(Y/N)
+North Tower,Central Plaza,180,300,Outdoor path with few obstacles,N,N,N
+Central Plaza,North Tower,180,300,Outdoor path with few obstacles,N,N,N
+Central Plaza,South Wing,120,200,Connected corridor indoors,Y,Y,Y
+South Wing,Central Plaza,120,200,Connected corridor indoors,Y,Y,Y
+```
+
+This creates a navigation graph where:
+- North Tower and South Wing only connect through Central Plaza
+- Travel times differ between spare and popular hours
+- Some paths are indoors with elevators, others are outdoor
 
 ---
 
