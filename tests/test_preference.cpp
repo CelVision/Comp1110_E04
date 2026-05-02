@@ -9,7 +9,7 @@
 #include <algorithm>
 #include <fstream>
 #include <limits>
-#include "navigation.cpp"
+#include "../src/navigation.cpp"
 
 /**
  * NavigationSystem manages the campus navigation graph and pathfinding.

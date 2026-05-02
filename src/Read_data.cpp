@@ -59,11 +59,11 @@ int main() {
     // Step 1: Read and validate nodes from node.txt
     // -------------------------------------------------------------------------
     unordered_set<string> validNodes;
-    ifstream nodeFile("../data/node.txt");
+    ifstream nodeFile("./data/node.txt");
     
     // Check if node.txt can be opened
     if (!nodeFile.is_open()) {
-        cerr << "Error: Cannot open ../data/node.txt. Please ensure it is in the data folder." << endl;
+        cerr << "Error: Cannot open ./data/node.txt. Please ensure it is in the data folder." << endl;
         return 1;
     }
 
@@ -82,11 +82,11 @@ int main() {
     // Step 2: Read neighbor relationships from neighbor.txt
     // -------------------------------------------------------------------------
     vector<pair<string, string>> pathPairs;
-    ifstream neighborFile("../data/neighbor.txt");
+    ifstream neighborFile("./data/neighbor.txt");
 
     // Check if neighbor.txt can be opened
     if (!neighborFile.is_open()) {
-        cerr << "Error: Cannot open ../data/neighbor.txt. Please ensure it is in the data folder." << endl;
+        cerr << "Error: Cannot open ./data/neighbor.txt. Please ensure it is in the data folder." << endl;
         return 1;
     }
 

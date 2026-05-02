@@ -12,6 +12,37 @@
 #include "navigation.cpp"
 
 /**
+ * Helper function to find the data directory
+ * Tries multiple paths: ./data/, ../data/, and absolute path
+ */
+std::string findDataPath(const std::string& filename) {
+    // Try current directory
+    std::ifstream test1("./data/" + filename);
+    if (test1.good()) {
+        test1.close();
+        return "./data/" + filename;
+    }
+    
+    // Try parent directory
+    std::ifstream test2("../data/" + filename);
+    if (test2.good()) {
+        test2.close();
+        return "../data/" + filename;
+    }
+    
+    // Try absolute path (Windows specific - adjust for your system)
+    std::string absPath = "D:\\Comp1110_E04\\data\\" + filename;
+    std::ifstream test3(absPath);
+    if (test3.good()) {
+        test3.close();
+        return absPath;
+    }
+    
+    // Default to ./data/ path
+    return "./data/" + filename;
+}
+
+/**
  * NavigationSystem manages the campus navigation graph and pathfinding.
  */
 class NavigationSystem {
@@ -400,7 +431,7 @@ std::vector<PathData> readPathsFromFile(const std::string& filename) {
 void loadRealData(NavigationSystem& system) {
     // Read buildings
     std::cout << "Reading buildings from node.txt...\n" << std::flush;
-    std::vector<std::string> buildings = readBuildingsFromFile("../data/node.txt");
+    std::vector<std::string> buildings = readBuildingsFromFile(findDataPath("node.txt"));
     std::cout << "  Loaded " << buildings.size() << " buildings\n" << std::flush;
     
     for (const auto& building : buildings) {
@@ -409,7 +440,7 @@ void loadRealData(NavigationSystem& system) {
     
     // Read neighbors and connect buildings
     std::cout << "Reading connections from neighbor.txt...\n" << std::flush;
-    std::map<std::string, std::vector<std::string>> neighbors = readNeighborsFromFile("../data/neighbor.txt");
+    std::map<std::string, std::vector<std::string>> neighbors = readNeighborsFromFile(findDataPath("neighbor.txt"));
     std::cout << "  Loaded " << neighbors.size() << " building connections\n" << std::flush;
     
     for (const auto& pair : neighbors) {
@@ -421,7 +452,7 @@ void loadRealData(NavigationSystem& system) {
     
     // Read paths
     std::cout << "Reading paths from Paths.txt...\n" << std::flush;
-    std::vector<PathData> paths = readPathsFromFile("../data/Paths.txt");
+    std::vector<PathData> paths = readPathsFromFile(findDataPath("Paths.txt"));
     std::cout << "  Loaded " << paths.size() << " paths\n" << std::flush;
     
     for (const auto& path : paths) {
