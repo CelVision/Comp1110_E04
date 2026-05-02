@@ -223,12 +223,12 @@ public:
                 
                 // Add 10 seconds reward/penalty for elevator or indoor paths
                 if (pathInfo->getHasElevatorOrEscalator() || pathInfo->getIfIndoors()) {
-                    timeSpareWithReward += 10.0f;
-                    timePopularWithReward += 10.0f;
+                    timeSpareWithReward -= 10.0f / 60.0f;
+                    timePopularWithReward -= 10.0f / 60.0f;
                 }
                 
-                info.totalTimeSpare -= timeSpareWithReward;
-                info.totalTimePopular -= timePopularWithReward;
+                info.totalTimeSpare += timeSpareWithReward;
+                info.totalTimePopular += timePopularWithReward;
                 
                 RouteInfo::PathSegment segment;
                 segment.from = info.route[i];
