@@ -218,8 +218,17 @@ public:
             Path* pathInfo = findPathInfo(info.route[i], info.route[i + 1]);
             if (pathInfo) {
                 // Always use original times for display
-                info.totalTimeSpare += pathInfo->getTimeSpare();
-                info.totalTimePopular += pathInfo->getTimePopular();
+                float timeSpareWithReward = pathInfo->getTimeSpare();
+                float timePopularWithReward = pathInfo->getTimePopular();
+                
+                // Add 10 seconds reward/penalty for elevator or indoor paths
+                if (pathInfo->getHasElevatorOrEscalator() || pathInfo->getIfIndoors()) {
+                    timeSpareWithReward += 10.0f;
+                    timePopularWithReward += 10.0f;
+                }
+                
+                info.totalTimeSpare -= timeSpareWithReward;
+                info.totalTimePopular -= timePopularWithReward;
                 
                 RouteInfo::PathSegment segment;
                 segment.from = info.route[i];
