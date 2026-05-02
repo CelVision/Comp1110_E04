@@ -797,6 +797,14 @@ g++ -std=c++17 -Wall -Wextra -o build/campus_nav.exe src/navigation.cpp src/inte
 ./build/campus_nav.exe
 ```
 
+Mac version:
+```bash
+# From root directory
+cd src
+clang++ -std=c++14 interface.cpp -o campus_nav
+./campus_nav
+```
+
 ### Running Tests
 ```bash
 # From root directory
